@@ -1,0 +1,937 @@
+[{
+  "_id": {
+    "$oid": "641fd7b7204e5ee6f5a551af"
+  },
+  "idModule": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "date_debut": {
+    "$date": "2023-03-26T03:00:00.171Z"
+  },
+  "date_fin": {
+    "$date": "2023-03-26T04:00:00.171Z"
+  },
+  "infos": [
+    {
+      "temperature": 10,
+      "fuel": 5,
+      "frequence": 14,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:05:00Z"
+      },
+      "_id": {
+        "$oid": "641fd7b7204e5ee6f5a551b0"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 16,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:10:00Z"
+      },
+      "_id": {
+        "$oid": "641fd7f1204e5ee6f5a551b5"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 16,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:15:00Z"
+      },
+      "_id": {
+        "$oid": "641fd86aef23b75349d360c8"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:20:00Z"
+      },
+      "_id": {
+        "$oid": "641fd884ef23b75349d360cd"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:25:00Z"
+      },
+      "_id": {
+        "$oid": "641fd8ff1874cb0d14fc2556"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:30:00Z"
+      },
+      "_id": {
+        "$oid": "641fd95b3dc8f75aaf2aedeb"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:35:00Z"
+      },
+      "_id": {
+        "$oid": "641fd9dcb0dfdbe3dcb502f3"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:40:00Z"
+      },
+      "_id": {
+        "$oid": "641fda840563e57a372ea4ba"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:45:00Z"
+      },
+      "_id": {
+        "$oid": "641fdb70e7d7f442e317554e"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:50:00Z"
+      },
+      "_id": {
+        "$oid": "641fdbe4e962c25600efc2df"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:55:00Z"
+      },
+      "_id": {
+        "$oid": "641fdca46e02c66067552525"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T04:00:00Z"
+      },
+      "_id": {
+        "$oid": "641fdcd56e02c6606755252a"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-03-26T03:00:00.212Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-26T04:00:00.420Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641fde01a803bd64d19bf9eb"
+  },
+  "idModule": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "date_debut": {
+    "$date": "2023-03-26T04:00:00.217Z"
+  },
+  "date_fin": {
+    "$date": "2023-03-26T05:00:00.217Z"
+  },
+  "infos": [
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T04:05:00Z"
+      },
+      "_id": {
+        "$oid": "641fde01a803bd64d19bf9ec"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T04:10:00Z"
+      },
+      "_id": {
+        "$oid": "641fde7f22dd23e0fbe5787e"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-03-26T05:00:00.257Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-26T04:00:15.708Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "641fdeea22dd23e0fbe57883"
+  },
+  "idModule": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "date_debut": {
+    "$date": "2023-03-26T05:00:00.683Z"
+  },
+  "date_fin": {
+    "$date": "2023-03-26T06:00:00.683Z"
+  },
+  "infos": [
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T05:05:00Z"
+      },
+      "_id": {
+        "$oid": "641fdeea22dd23e0fbe57884"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-03-26T05:00:00.708Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-26T06:00:00.708Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "643effaf49301b16c1213a6d"
+  },
+  "idModule": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "date_debut": {
+    "$date": "2023-04-18T20:00:07.003Z"
+  },
+  "date_fin": {
+    "$date": "2023-04-18T21:00:07.003Z"
+  },
+  "infos": [
+    {
+      "temperature": 10,
+      "fuel": 14,
+      "frequence": 60,
+      "pression_huile": 10,
+      "phase1": 30,
+      "phase2": 25,
+      "date": {
+        "$date": "2023-04-26T20:05:33Z"
+      },
+      "_id": {
+        "$oid": "643effaf49301b16c1213a6e"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-04-18T20:00:00.042Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-18T21:00:00.042Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644d63d9cecc128a1057b54f"
+  },
+  "idModule": {
+    "$oid": "644d62c3cecc128a1057b546"
+  },
+  "date_debut": {
+    "$date": "2023-03-26T03:00:00.171Z"
+  },
+  "date_fin": {
+    "$date": "2023-03-26T04:00:00.171Z"
+  },
+  "infos": [
+    {
+      "temperature": 10,
+      "fuel": 5,
+      "frequence": 14,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:05:00Z"
+      },
+      "_id": {
+        "$oid": "641fd7b7204e5ee6f5a551b0"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 16,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:10:00Z"
+      },
+      "_id": {
+        "$oid": "641fd7f1204e5ee6f5a551b5"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 16,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:15:00Z"
+      },
+      "_id": {
+        "$oid": "641fd86aef23b75349d360c8"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:20:00Z"
+      },
+      "_id": {
+        "$oid": "641fd884ef23b75349d360cd"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:25:00Z"
+      },
+      "_id": {
+        "$oid": "641fd8ff1874cb0d14fc2556"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:30:00Z"
+      },
+      "_id": {
+        "$oid": "641fd95b3dc8f75aaf2aedeb"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:35:00Z"
+      },
+      "_id": {
+        "$oid": "641fd9dcb0dfdbe3dcb502f3"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:40:00Z"
+      },
+      "_id": {
+        "$oid": "641fda840563e57a372ea4ba"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:45:00Z"
+      },
+      "_id": {
+        "$oid": "641fdb70e7d7f442e317554e"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:50:00Z"
+      },
+      "_id": {
+        "$oid": "641fdbe4e962c25600efc2df"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T03:55:00Z"
+      },
+      "_id": {
+        "$oid": "641fdca46e02c66067552525"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T04:00:00Z"
+      },
+      "_id": {
+        "$oid": "641fdcd56e02c6606755252a"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-03-26T03:00:00.212Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-26T04:00:00.420Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644d63ebcecc128a1057b554"
+  },
+  "idModule": {
+    "$oid": "644d62c3cecc128a1057b546"
+  },
+  "date_debut": {
+    "$date": "2023-03-26T04:00:00.217Z"
+  },
+  "date_fin": {
+    "$date": "2023-03-26T05:00:00.217Z"
+  },
+  "infos": [
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T04:05:00Z"
+      },
+      "_id": {
+        "$oid": "641fde01a803bd64d19bf9ec"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T04:10:00Z"
+      },
+      "_id": {
+        "$oid": "641fde7f22dd23e0fbe5787e"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-03-26T05:00:00.257Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-26T04:00:15.708Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644d63f4cecc128a1057b555"
+  },
+  "idModule": {
+    "$oid": "644d62c3cecc128a1057b546"
+  },
+  "date_debut": {
+    "$date": "2023-03-26T05:00:00.683Z"
+  },
+  "date_fin": {
+    "$date": "2023-03-26T06:00:00.683Z"
+  },
+  "infos": [
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T06:05:00Z"
+      },
+      "_id": {
+        "$oid": "641fdeea22dd23e0fbe57884"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-03-26T05:00:00.708Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-26T06:00:00.708Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644d63ffcecc128a1057b556"
+  },
+  "idModule": {
+    "$oid": "644d62c3cecc128a1057b546"
+  },
+  "date_debut": {
+    "$date": "2023-04-18T20:00:07.003Z"
+  },
+  "date_fin": {
+    "$date": "2023-04-18T21:00:07.003Z"
+  },
+  "infos": [
+    {
+      "temperature": 10,
+      "fuel": 14,
+      "frequence": 60,
+      "pression_huile": 10,
+      "phase1": 30,
+      "phase2": 25,
+      "date": {
+        "$date": "2023-04-26T20:05:33Z"
+      },
+      "_id": {
+        "$oid": "643effaf49301b16c1213a6e"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-04-18T20:00:00.042Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-18T21:00:00.042Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644d641ccecc128a1057b55b"
+  },
+  "idModule": {
+    "$oid": "644d62dccecc128a1057b547"
+  },
+  "date_debut": {
+    "$date": "2023-03-27T03:00:00.171Z"
+  },
+  "date_fin": {
+    "$date": "2023-03-27T04:00:00.171Z"
+  },
+  "infos": [
+    {
+      "temperature": 25,
+      "fuel": 50,
+      "frequence": 25,
+      "pression_huile": 30,
+      "phase1": 120,
+      "phase2": 240,
+      "date": {
+        "$date": "2023-03-27T03:05:00Z"
+      },
+      "_id": {
+        "$oid": "641fd7b7204e5ee6f5a551b0"
+      }
+    },
+    {
+      "temperature": 23,
+      "fuel": 49,
+      "frequence": 25,
+      "pression_huile": 29,
+      "phase1": 120,
+      "phase2": 240,
+      "date": {
+        "$date": "2023-03-27T03:10:00Z"
+      },
+      "_id": {
+        "$oid": "641fd7f1204e5ee6f5a551b5"
+      }
+    },
+    {
+      "temperature": 25,
+      "fuel": 45,
+      "frequence": 25,
+      "pression_huile": 20,
+      "phase1": 119,
+      "phase2": 240,
+      "date": {
+        "$date": "2023-03-27T03:15:00Z"
+      },
+      "_id": {
+        "$oid": "641fd86aef23b75349d360c8"
+      }
+    },
+    {
+      "temperature": 35,
+      "fuel": 38,
+      "frequence": 26,
+      "pression_huile": 20,
+      "phase1": 115,
+      "phase2": 240,
+      "date": {
+        "$date": "2023-03-27T03:20:00Z"
+      },
+      "_id": {
+        "$oid": "641fd884ef23b75349d360cd"
+      }
+    },
+    {
+      "temperature": 45,
+      "fuel": 24,
+      "frequence": 45,
+      "pression_huile": 30,
+      "phase1": 105,
+      "phase2": 208,
+      "date": {
+        "$date": "2023-03-27T03:25:00Z"
+      },
+      "_id": {
+        "$oid": "641fd8ff1874cb0d14fc2556"
+      }
+    },
+    {
+      "temperature": 40,
+      "fuel": 45,
+      "frequence": 45,
+      "pression_huile": 30,
+      "phase1": 104,
+      "phase2": 203,
+      "date": {
+        "$date": "2023-03-27T03:30:00Z"
+      },
+      "_id": {
+        "$oid": "641fd95b3dc8f75aaf2aedeb"
+      }
+    },
+    {
+      "temperature": 35,
+      "fuel": 24,
+      "frequence": 60,
+      "pression_huile": 30,
+      "phase1": 104,
+      "phase2": 220,
+      "date": {
+        "$date": "2023-03-27T03:35:00Z"
+      },
+      "_id": {
+        "$oid": "641fd9dcb0dfdbe3dcb502f3"
+      }
+    },
+    {
+      "temperature": 30,
+      "fuel": 26,
+      "frequence": 60,
+      "pression_huile": 24,
+      "phase1": 100,
+      "phase2": 220,
+      "date": {
+        "$date": "2023-03-27T03:40:00Z"
+      },
+      "_id": {
+        "$oid": "641fda840563e57a372ea4ba"
+      }
+    },
+    {
+      "temperature": 35,
+      "fuel": 24,
+      "frequence": 60,
+      "pression_huile": 45,
+      "phase1": 100,
+      "phase2": 220,
+      "date": {
+        "$date": "2023-03-27T03:45:00Z"
+      },
+      "_id": {
+        "$oid": "641fdb70e7d7f442e317554e"
+      }
+    },
+    {
+      "temperature": 30,
+      "fuel": 80,
+      "frequence": 45,
+      "pression_huile": 45,
+      "phase1": 100,
+      "phase2": 200,
+      "date": {
+        "$date": "2023-03-27T03:50:00Z"
+      },
+      "_id": {
+        "$oid": "641fdbe4e962c25600efc2df"
+      }
+    },
+    {
+      "temperature": 70,
+      "fuel": 20,
+      "frequence": 30,
+      "pression_huile": 25,
+      "phase1": 100,
+      "phase2": 209,
+      "date": {
+        "$date": "2023-03-27T03:55:00Z"
+      },
+      "_id": {
+        "$oid": "641fdca46e02c66067552525"
+      }
+    },
+    {
+      "temperature": 34,
+      "fuel": 89,
+      "frequence": 50,
+      "pression_huile": 50,
+      "phase1": 89,
+      "phase2": 100,
+      "date": {
+        "$date": "2023-03-27T04:00:00Z"
+      },
+      "_id": {
+        "$oid": "641fdcd56e02c6606755252a"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-03-26T03:00:00.212Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-26T04:00:00.420Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644d6425cecc128a1057b55c"
+  },
+  "idModule": {
+    "$oid": "644d62dccecc128a1057b547"
+  },
+  "date_debut": {
+    "$date": "2023-03-26T04:00:00.217Z"
+  },
+  "date_fin": {
+    "$date": "2023-03-26T05:00:00.217Z"
+  },
+  "infos": [
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T06:15:00Z"
+      },
+      "_id": {
+        "$oid": "641fde01a803bd64d19bf9ec"
+      }
+    },
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T06:15:00Z"
+      },
+      "_id": {
+        "$oid": "641fde7f22dd23e0fbe5787e"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-03-26T05:00:00.257Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-26T04:00:15.708Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644d642ececc128a1057b55d"
+  },
+  "idModule": {
+    "$oid": "644d62dccecc128a1057b547"
+  },
+  "date_debut": {
+    "$date": "2023-03-26T05:00:00.683Z"
+  },
+  "date_fin": {
+    "$date": "2023-03-26T06:00:00.683Z"
+  },
+  "infos": [
+    {
+      "temperature": 10,
+      "fuel": 8,
+      "frequence": 20,
+      "pression_huile": 25,
+      "phase1": 25,
+      "phase2": 30,
+      "date": {
+        "$date": "2023-03-26T06:15:00Z"
+      },
+      "_id": {
+        "$oid": "641fdeea22dd23e0fbe57884"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-03-26T05:00:00.708Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-26T06:00:00.708Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644d6437cecc128a1057b55e"
+  },
+  "idModule": {
+    "$oid": "644d62dccecc128a1057b547"
+  },
+  "date_debut": {
+    "$date": "2023-04-18T20:00:07.003Z"
+  },
+  "date_fin": {
+    "$date": "2023-04-18T21:00:07.003Z"
+  },
+  "infos": [
+    {
+      "temperature": 10,
+      "fuel": 14,
+      "frequence": 60,
+      "pression_huile": 10,
+      "phase1": 30,
+      "phase2": 25,
+      "date": {
+        "$date": "2023-04-26T04:02:33Z"
+      },
+      "_id": {
+        "$oid": "643effaf49301b16c1213a6e"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-04-18T20:00:00.042Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-18T21:00:00.042Z"
+  },
+  "__v": 0
+}]

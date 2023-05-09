@@ -1,0 +1,146 @@
+[{
+  "_id": {
+    "$oid": "644052109886399e69c0cbc4"
+  },
+  "idModule": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "date_demarrage": {
+    "$date": "2023-03-26T05:02:33.171Z"
+  },
+  "createdAt": {
+    "$date": "2023-04-19T20:41:53.053Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-19T20:42:47.554Z"
+  },
+  "__v": 0,
+  "date_arret": {
+    "$date": "2023-03-26T08:15:33.171Z"
+  }
+},{
+  "_id": {
+    "$oid": "6440525d9886399e69c0cbcb"
+  },
+  "idModule": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "date_demarrage": {
+    "$date": "2023-04-17T08:15:33.171Z"
+  },
+  "createdAt": {
+    "$date": "2023-04-19T20:43:09.945Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-19T20:43:27.405Z"
+  },
+  "__v": 0,
+  "date_arret": {
+    "$date": "2023-04-17T18:15:33.171Z"
+  }
+},{
+  "_id": {
+    "$oid": "6441560d023ab65bed4c37a1"
+  },
+  "idModule": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "date_demarrage": {
+    "$date": "2023-04-20T16:15:33.171Z"
+  },
+  "createdAt": {
+    "$date": "2023-04-20T15:11:09.337Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-21T13:52:06.459Z"
+  },
+  "__v": 0,
+  "date_arret": {
+    "$date": "2023-04-21T10:30:33Z"
+  },
+  "duration": 65699829
+},{
+  "_id": {
+    "$oid": "64429574cc873f72e6a84a6e"
+  },
+  "idModule": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "date_demarrage": {
+    "$date": "2023-04-21T17:30:33Z"
+  },
+  "duration": 600000,
+  "createdAt": {
+    "$date": "2023-04-21T13:53:56.363Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-21T13:55:35.830Z"
+  },
+  "__v": 0,
+  "date_arret": {
+    "$date": "2023-04-21T17:40:33Z"
+  }
+},{
+  "_id": {
+    "$oid": "644295e535f81ef836c384e5"
+  },
+  "idModule": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "date_demarrage": {
+    "$date": "2023-04-21T18:40:33Z"
+  },
+  "duration": 432000000,
+  "createdAt": {
+    "$date": "2023-04-21T13:55:49.849Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-26T20:56:09.939Z"
+  },
+  "__v": 0,
+  "date_arret": {
+    "$date": "2023-04-26T18:40:33Z"
+  }
+},{
+  "_id": {
+    "$oid": "64499216caef08a46715e2aa"
+  },
+  "idModule": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "date_demarrage": {
+    "$date": "2023-04-26T21:40:33Z"
+  },
+  "duration": 3600000,
+  "createdAt": {
+    "$date": "2023-04-26T21:05:26.541Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-26T21:08:04.517Z"
+  },
+  "__v": 0,
+  "date_arret": {
+    "$date": "2023-04-26T22:40:33Z"
+  }
+},{
+  "_id": {
+    "$oid": "6449930c1548be417326ccb4"
+  },
+  "idModule": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "date_demarrage": {
+    "$date": "2023-04-26T22:50:33Z"
+  },
+  "duration": 300000,
+  "createdAt": {
+    "$date": "2023-04-26T21:09:32.515Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-26T21:10:08.236Z"
+  },
+  "__v": 0,
+  "date_arret": {
+    "$date": "2023-04-26T22:55:33Z"
+  }
+}]

@@ -1,0 +1,12 @@
+{
+    "port":4010,
+    "port2":4000,
+    "mongodb": "mongodb://localhost:27017/genemo",
+    "status":{
+        "NOT_RUNNING":"NOT_RUNNING",
+        "NOT_RUN_FAULT":"NOT_RUNNING/FAULT",
+        "STOPPED":"STOPPED",
+        "RUNNING":"RUNNING",
+        "RUN_FAULT":"RUNNING/FAULT"
+    }
+    }

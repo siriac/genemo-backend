@@ -1,0 +1,115 @@
+[{
+  "_id": {
+    "$oid": "641fd1e92c12f24872da914c"
+  },
+  "idImei": {
+    "$oid": "641fbcd70f1c70cf04686708"
+  },
+  "stationName": "MOKOLO",
+  "position": {
+    "lat": 1.1,
+    "long": 0.8
+  },
+  "createdAt": {
+    "$date": "2023-03-26T05:02:33.171Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-26T21:10:08.249Z"
+  },
+  "dataRequired": {
+    "temperature": 0,
+    "fuel": 0,
+    "phase1": 0,
+    "phase2": 0,
+    "pression_huile": 0,
+    "frequence": 0
+  },
+  "__v": 0,
+  "etat": false,
+  "duree_fonctionnement_format": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "duree_fonctionnement": 45900000
+},{
+  "_id": {
+    "$oid": "644d62c3cecc128a1057b546"
+  },
+  "idImei": {
+    "$oid": "641fbcd70f1c70cf04686708"
+  },
+  "stationName": "TSINGA",
+  "position": {
+    "lat": 1.1,
+    "long": 0.8
+  },
+  "createdAt": {
+    "$date": "2023-03-26T05:02:33.171Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-26T21:10:08.249Z"
+  },
+  "dataRequired": {
+    "temperature": 0,
+    "fuel": 0,
+    "phase1": 0,
+    "phase2": 0,
+    "pression_huile": 0,
+    "frequence": 0
+  },
+  "__v": 0,
+  "etat": false,
+  "duree_fonctionnement_format": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "duree_fonctionnement": 45900000
+},{
+  "_id": {
+    "$oid": "644d62dccecc128a1057b547"
+  },
+  "idImei": {
+    "$oid": "641fbcd70f1c70cf04686708"
+  },
+  "stationName": "MARCHE CENTRAL",
+  "position": {
+    "lat": 1.1,
+    "long": 0.8
+  },
+  "createdAt": {
+    "$date": "2023-03-26T05:02:33.171Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-26T21:10:08.249Z"
+  },
+  "dataRequired": {
+    "temperature": 0,
+    "fuel": 0,
+    "phase1": 0,
+    "phase2": 0,
+    "pression_huile": 0,
+    "frequence": 0
+  },
+  "__v": 0,
+  "etat": false,
+  "duree_fonctionnement_format": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "duree_fonctionnement": 45900000
+}]

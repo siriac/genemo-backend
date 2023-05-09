@@ -1,0 +1,39 @@
+{
+  "name": "genemo_backend",
+  "version": "1.0.0",
+  "description": "A RESTful web service app for handle generator's data",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "rimraf dist/ && babel ./src --out-dir dist/ --ignore ./node_modules,./.babelrc,./nodemon.json,./package.json,./npm-debug.log --copy-files && copyfiles -a config/* dist",
+    "start": "npm run build && cross-env NODE_ENV=production node dist/index.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon"
+  },
+  "keywords": [
+    "NodeJS"
+  ],
+  "author": "bitsizelearning",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.10",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.15",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "config": "^3.3.7",
+    "express": "^4.17.3",
+    "express-session": "^1.17.3",
+    "keycloak-connect": "^21.0.1",
+    "moment": "^2.29.4",
+    "mongoose": "^6.2.6",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.6.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.3",
+    "winston": "^3.6.0"
+  }
+}

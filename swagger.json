@@ -1,0 +1,932 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a NodeJS API project to Swagger Documentation",
+    "version": "1.0.0",
+    "title": "Genome API",
+    "contact": {
+      "email": "abc@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "schemes": ["http"],
+  "host": "139.59.208.55:4000",
+  "basePath": "/",
+  "paths": {
+    "/modules/{stationName}": {
+      "post": {
+        "summary": "Create a new modules if not exist and create new trame",
+        "description": "Create a new modules if not exist and create new trame",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+            {
+                "name": "stationName",
+                "in": "path",
+                "description": "module name that needs to be create or to create the trame",
+                "required": true,
+                "type": "string"
+            },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "trame object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "trame": {
+                  "type": "object",
+                  "$ref": "#/definitions/Trame"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/todosResponse"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    },
+    "/modules/{idModule}": {
+        "get": {
+          "summary": "Obtenir les informations sur un le groupe donc l'identifiant est idModule",
+          "description": "Obtenir les informations sur un le groupe donc l'identifiant est idModule",
+          "consumes": ["application/json"],
+          "parameters": [
+              {
+                  "name": "idModule",
+                  "in": "path",
+                  "description": "Id module that needs to get informations",
+                  "required": true,
+                  "type": "string"
+              }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/modulesResponse"
+                }
+              }
+            },
+            "500": {
+              "description": "Invalid status value",
+              "schema": {
+                "$ref": "#/definitions/InvalidResponse"
+              }
+            }
+          }
+        }
+      },
+      "/modules/search": {
+        "get": {
+          "summary": "Obtenir les informations sur un le groupe donc l'identifiant est idModule",
+          "description": "Obtenir les informations sur un le groupe donc l'identifiant est idModule",
+          "consumes": ["application/json"],
+          "parameters": [
+              {
+                  "name": "name",
+                  "in": "query",
+                  "description": "Nom du groupe ou stationName",
+                  "required": true,
+                  "type": "string"
+              },
+              {
+                "name": "page",
+                "in": "query",
+                "description": "Numero de la page",
+                "required": false,
+                "type": "integer"
+            },
+            {
+                "name": "limit",
+                "in": "query",
+                "description": "Nombre maximun d'element",
+                "required": false,
+                "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/modulesResponse"
+                }
+              }
+            },
+            "500": {
+              "description": "Invalid status value",
+              "schema": {
+                "$ref": "#/definitions/InvalidResponse"
+              }
+            }
+          }
+        }
+      },
+      "/modules/{idModule}/trames": {
+        "get": {
+          "summary": "Obtenir toutes les trames d'un module",
+          "description": "Obtenir toutes les trames d'un module",
+          "consumes": ["application/json"],
+          "parameters": [
+              {
+                  "name": "idModule",
+                  "in": "path",
+                  "description": "id module or generator that needs to get all trames",
+                  "required": true,
+                  "type": "string"
+              },
+              {
+                "name": "page",
+                "in": "query",
+                "description": "Numero de la page",
+                "required": false,
+                "type": "integer"
+            },
+            {
+                "name": "limit",
+                "in": "query",
+                "description": "Nombre d'element à afficher dans la page",
+                "required": false,
+                "type": "integer"
+            },
+            {
+                "name": "from",
+                "in": "query",
+                "description": "Date à partir de laquelle on veut l'information",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "at",
+                "in": "query",
+                "description": "Date de fin à laquelle on veut l'information",
+                "required": false,
+                "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/TramesResponse"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value",
+              "schema": {
+                "$ref": "#/definitions/InvalidResponse"
+              }
+            }
+          }
+        }
+      },
+      "/modules/{idModule}/vidanges": {
+        "get": {
+          "summary": "Obtenir toutes les vidanges d'un module",
+          "description": "Obtenir toutes les vidanges d'un module",
+          "consumes": ["application/json"],
+          "parameters": [
+              {
+                  "name": "idModule",
+                  "in": "path",
+                  "description": "id module or generator that needs to get all trames",
+                  "required": true,
+                  "type": "string"
+              },
+              {
+                "name": "page",
+                "in": "query",
+                "description": "Numero de la page",
+                "required": false,
+                "type": "integer"
+            },
+            {
+                "name": "limit",
+                "in": "query",
+                "description": "Nombre d'element à afficher dans la page",
+                "required": false,
+                "type": "integer"
+            },
+            {
+                "name": "from",
+                "in": "query",
+                "description": "Date à partir de laquelle on veut l'information",
+                "required": false,
+                "type": "string"
+            },
+            {
+                "name": "at",
+                "in": "query",
+                "description": "Date de fin à laquelle on veut l'information",
+                "required": false,
+                "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/vidangesResponse"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value",
+              "schema": {
+                "$ref": "#/definitions/InvalidResponse"
+              }
+            }
+          }
+        }
+      },
+      "/modules": {
+        "get": {
+          "summary": "Obtenir tous les modules",
+          "description": "Obtenir tous les modules",
+          "consumes": ["application/json"],
+          "parameters": [
+              {
+                "name": "page",
+                "in": "query",
+                "description": "Numero de la page",
+                "required": false,
+                "type": "integer"
+            },
+            {
+                "name": "limit",
+                "in": "query",
+                "description": "Nombre d'element à afficher dans la page",
+                "required": false,
+                "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/modulesResponse"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value",
+              "schema": {
+                "$ref": "#/definitions/InvalidResponse"
+              }
+            }
+          }
+        }
+      },
+      "/vidanges": {
+        "post": {
+          "summary": "Creer une vidange",
+          "description": "Creer une vidange",
+          "produces": ["application/json"],
+          "consumes": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "vidange object",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "task": {
+                    "type": "object",
+                    "$ref": "#/definitions/Vidange"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/vidangeCreateResponse"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value",
+              "schema": {
+                "$ref": "#/definitions/InvalidResponse"
+              }
+            }
+          }
+        }
+      },
+      "/vidanges/{id}": {
+        "put": {
+          "summary": "Update the vidange",
+          "description": "Update the vidange",
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "vidange id that needs to be deleted",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "task object",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "task": {
+                    "type": "object",
+                    "$ref": "#/definitions/vidange"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "object",
+                "items": {
+                  "$ref": "#/definitions/vidangeUpdateResponse"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value",
+              "schema": {
+                "$ref": "#/definitions/InvalidResponse"
+              }
+            }
+          }
+        }
+      },
+    "/todos/{id}": {
+      "put": {
+        "summary": "Update the tasks",
+        "description": "Update the tasks",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "task id that needs to be deleted",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "task object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "task": {
+                  "type": "object",
+                  "$ref": "#/definitions/Task"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/todosResponse"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    },
+    "/todo/{id}": {
+      "delete": {
+        "summary": "Delete the task",
+        "description": "Delete the task",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "task id that needs to be deleted",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/todosResponse"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "todosResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task": {
+          "type": "string"
+        },
+        "assignee": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "modulesResponse":{
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description":"Identifiant du module"
+          },
+          "stationName": {
+            "type": "string",
+            "description":"Nom de la station"
+          },
+          "position": {
+            "type": "object",
+            "description":"information dur la position geographique lat et long",
+            "properties":{
+            "lat":{
+                "type":"string",
+                "description":"latitude"
+            },
+            "long":{
+                "type":"string",
+                "description":"longitude"
+            }
+            }
+          },
+          "dataRequired":{
+            "type":"object",
+            "properties":{
+            "temp":{
+                "type":"string",
+                "description":"Temperature minimun"
+            },
+            "fuel":{
+                "type":"string"
+            },
+            "ph1":{
+                "type":"string"
+            },
+            "ph2":{
+                "type":"string"
+            },
+            "ph3":{
+                "type":"string"
+            },
+            "oilPress":{
+                "type":"string"
+            },
+            "freq":{
+                "type":"string"
+            }
+            }
+          },
+          "elapse":{
+            "type":"object",
+            "description":"Durée de fonctionnement depuis la derniere vidange",
+            "properties":{
+            "milliseconds":{
+                "type":"string",
+                "description":"Millisecondes"
+            },
+            "seconds":{
+                "type":"string"
+            },
+            "minutes":{
+                "type":"string"
+            },
+            "hours":{
+                "type":"string"
+            },
+            "ph3":{
+                "type":"string"
+            },
+            "days":{
+                "type":"string"
+            },
+            "months":{
+                "type":"string"
+            },
+            "years":{
+                "type":"string"
+            }
+            }
+          },
+          "elapse_total":{
+            "type":"object",
+            "description":"Durée de fonctionnement depuis le prémier démarrage du groupe",
+            "properties":{
+            "milliseconds":{
+                "type":"string",
+                "description":"Millisecondes"
+            },
+            "seconds":{
+                "type":"string"
+            },
+            "minutes":{
+                "type":"string"
+            },
+            "hours":{
+                "type":"string"
+            },
+            "ph3":{
+                "type":"string"
+            },
+            "days":{
+                "type":"string"
+            },
+            "months":{
+                "type":"string"
+            },
+            "years":{
+                "type":"string"
+            }
+            }
+          },
+          "infoVidange":{
+            "type":"object",
+            "description":"Durée de fonctionnement depuis le prémier démarrage du groupe",
+            "properties":{
+            "id":{
+                "type":"string",
+                "description":"Identifiant de la vidange"
+            },
+            "remarque":{
+                "type":"string",
+                "description":"Remarque faites lors de la vidange"
+            },
+            "date":{
+                "type":"string",
+                "description":"Date de la vidange"
+            },
+            "createdAt":{
+                "type":"string",
+                "description":"Date de creation coté serveur"
+            },
+            "ph3":{
+                "type":"string"
+            },
+            "days":{
+                "type":"string"
+            },
+            "idModule":{
+                "type":"string",
+                "description":"Identifiant du groupe qui a été vidangé"
+            }
+            }
+          }
+        }
+    },
+    "Task": {
+      "type": "object",
+      "properties": {
+        "task": {
+          "type": "string"
+        },
+        "assignee": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "InvalidResponse": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "Trame": {
+        "type": "object",
+        "properties": {
+          "temp": {
+            "type": "string"
+          },
+          "fuel": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "ph1": {
+            "type": "string"
+          },
+          "ph2": {
+            "type": "string"
+          },
+          "ph3": {
+            "type": "string"
+          },
+          "freq": {
+            "type": "string"
+          },
+          "oilPress": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      },
+      "Station": {
+        "type": "object",
+        "properties": {
+          "dataRequired": {
+            "type": "object",
+            "description":"Information sur les seuils normaux requis",
+            "properties":{
+                "temp":{
+                    "type":"string"
+                },
+                "fuel":{
+                    "type":"string"
+                },
+                "ph1":{
+                    "type":"string"
+                },
+                "ph2":{
+                    "type":"string"
+                },
+                "ph3":{
+                    "type":"string"
+                },
+                "oilPress":{
+                    "type":"string"
+                },
+                "freq":{
+                    "type":"string"
+                }
+            }
+          },
+          "temp": {
+            "type": "string",
+            "description":"Temperature du groupe"
+          },
+          "status": {
+            "type": "string",
+            "description":"Status du groupe"
+          },
+          "stationName": {
+            "type": "string",
+            "description":"station name"
+          },
+          "elapse": {
+            "type": "string",
+            "description":"Durée de fonctionnenment depuis la derniere vidange",
+            "properties":{
+                "milliseconds":{
+                    "type":"string"
+                },
+                "seconds":{
+                    "type":"string"
+                },
+                "minutes":{
+                    "type":"string"
+                },
+                "hours":{
+                    "type":"string"
+                },
+                "days":{
+                    "type":"string"
+                },
+                "months":{
+                    "type":"string"
+                },
+                "years":{
+                    "type":"string"
+                }
+            }
+          },
+          "elapse_total_number": {
+            "type": "string",
+            "description":"Durée de fonctionnement du groupe depuis le prémier demarrage",
+            "properties":{
+                "milliseconds":{
+                    "type":"string"
+                },
+                "seconds":{
+                    "type":"string"
+                },
+                "minutes":{
+                    "type":"string"
+                },
+                "hours":{
+                    "type":"string"
+                },
+                "days":{
+                    "type":"string"
+                },
+                "months":{
+                    "type":"string"
+                },
+                "years":{
+                    "type":"string"
+                }
+            }
+          }
+        }
+      },
+      "Vidange": {
+        "type": "object",
+        "properties": {
+          "idModule": {
+            "type": "string",
+            "description":"Identifiant du groupe qu'on doit vidanger"
+          },
+          "date": {
+            "type": "object",
+            "description":"Date de la vidange"
+          },
+          "remarque": {
+            "type": "string",
+            "description":"Remarques faites lors de la vidange"
+          }
+        }
+      },
+      "vidangeResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "description":"Identifiant de la vidange"
+          }
+        }
+      },
+      "TramesResponse":{
+        "type": "object",
+        "properties": {
+            "id":{
+                "type":"string",
+                "description":"Identifiant de la trame"
+            },
+            "temp":{
+                "type":"string",
+                "description":"temperature"
+            },
+            "bat":{
+                "type":"string",
+                "description":"Batterie"
+            },
+            "ph1":{
+                "type":"string",
+                "description":"Phase 1"
+            },
+            "ph2":{
+                "type":"string",
+                "description":"Phase 2"
+            },
+            "ph3":{
+               "type":"string",
+               "description":"Phase 3" 
+            },
+            "freq":{
+                "type":"string",
+                "description":"Frequence" 
+             },
+             "oilPress":{
+                "type":"string",
+                "description":"Pression d'huile" 
+             }
+        }
+      },
+      "vidangesResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description":"Identifiant de la vidange"
+          },
+          "remarque": {
+            "type": "string",
+            "description":"Remarques lors de la vidange"
+          },
+          "date": {
+            "type": "string",
+            "description":"Date de la vidange"
+          },
+          "createdAt": {
+            "type": "string",
+            "description":"Date de la creation de la vidange coté serveur"
+          },
+          "idModule": {
+            "type": "string",
+            "description":"Identifiant du module ou du generateur qui a été vidangé"
+          },
+          "doBy": {
+            "type": "string",
+            "description":"L'identifiant de celui qui a fait la vidange"
+          }
+        }
+      },
+      "vidangeCreateResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description":"Identifiant de la vidange"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "vidangeUpdateResponse":{
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string",
+                "description":"Identifiant de la vidange"
+              },
+              "remarque": {
+                "type": "string"
+              } ,
+              "date": {
+                "type": "string"
+              } ,
+              "createdAt": {
+                "type": "string"
+              },
+              "idModule": {
+                "type": "string"
+              } 
+        }
+      }
+  }
+}
