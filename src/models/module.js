@@ -33,36 +33,36 @@ const moduleSchema = new Schema(
       },
     },
     temp: {
-      type: String,
-      default:"000°C"
+      type: Number,
+      default:0
     },
     fuel: {
-      type: String,
-      default:"000%"
+      type: Number,
+      default:0
     },
     bat: {
-      type: String,
-      default:"00.0VDC"
+      type: Number,
+      default:0
     },
     ph1: {
-      type: String,
-      default:"000VAC"
+      type: Number,
+      default:0
     },
     ph2: {
-      type: String,
-      default:"000VAC"
+      type: Number,
+      default:0
     },
     ph3: {
-      type: String,
-      default:"000VAC"
+      type: Number,
+      default:0
     },
     freq: {
-      type: String,
-      default:"000Hz"
+      type: Number,
+      default:0
     },
     oilPress: {
-      type: String,
-      default:"000BAR"
+      type: Number,
+      default:0
     },
     elapse_total: {
       milliseconds: {

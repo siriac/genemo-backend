@@ -31,6 +31,7 @@ app.use((req, res, next) => {
   // Website you wish to allow to connect
   // res.setHeader('Access-Control-Allow-Origin', 'http://some-accepted-origin');//
   //res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+  res.setHeader('Access-Control-Allow-Origin', "*");
 
   /*const allowedOrigins = ['http://127.0.0.1:8020', 'http://localhost:8020', 'http://127.0.0.1:9000', 'http://localhost:9000'];
   const origin = req.headers.origin;

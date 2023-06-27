@@ -772,3 +772,255 @@
 {"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-06T14:47:32.031Z"}
 {"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-06T14:51:30.957Z"}
 {"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-06T14:52:20.925Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-11T18:01:34.594Z"}
+{"label":"genemo","level":"info","message":"GET /modules 200 1826 - 370.332 ms\n","timestamp":"2023-05-11T18:01:44.055Z"}
+{"label":"genemo","level":"info","message":"GET /modules/64564af9cfd7d4b79952a34c/vidanges 200 76 - 140.114 ms\n","timestamp":"2023-05-11T18:02:01.271Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-11T18:12:15.689Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T13:59:30.567Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 1410 - 300.050 ms\n","timestamp":"2023-05-13T13:59:56.141Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/ 200 3106 - 29.914 ms\n","timestamp":"2023-05-13T14:01:33.251Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui.css 200 145206 - 12.313 ms\n","timestamp":"2023-05-13T14:01:34.035Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-init.js 200 27725 - 1.401 ms\n","timestamp":"2023-05-13T14:01:34.059Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js 200 322863 - 11.246 ms\n","timestamp":"2023-05-13T14:01:34.081Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-bundle.js 200 1045708 - 16.061 ms\n","timestamp":"2023-05-13T14:01:34.104Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/favicon-32x32.png 200 628 - 2.068 ms\n","timestamp":"2023-05-13T14:01:35.884Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:13:17.150Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/ 304 - - 11.643 ms\n","timestamp":"2023-05-13T14:13:20.240Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui.css 304 - - 6.912 ms\n","timestamp":"2023-05-13T14:13:20.551Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-init.js 200 27716 - 1.170 ms\n","timestamp":"2023-05-13T14:13:20.557Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-bundle.js 304 - - 14.026 ms\n","timestamp":"2023-05-13T14:13:20.560Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js 304 - - 10.921 ms\n","timestamp":"2023-05-13T14:13:20.565Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/favicon-32x32.png 304 - - 1.105 ms\n","timestamp":"2023-05-13T14:13:22.014Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:19:46.791Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/ 304 - - 11.176 ms\n","timestamp":"2023-05-13T14:20:03.412Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui.css 304 - - 3.147 ms\n","timestamp":"2023-05-13T14:20:03.484Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-bundle.js 304 - - 1.242 ms\n","timestamp":"2023-05-13T14:20:03.501Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-init.js 200 27721 - 1.337 ms\n","timestamp":"2023-05-13T14:20:03.510Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js 304 - - 7.560 ms\n","timestamp":"2023-05-13T14:20:03.512Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/favicon-32x32.png 304 - - 1.017 ms\n","timestamp":"2023-05-13T14:20:04.845Z"}
+{"label":"genemo","level":"info","message":"POST /modules/Congelcam%20essos 200 53 - 116.416 ms\n","timestamp":"2023-05-13T14:20:24.224Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 1778 - 194.952 ms\n","timestamp":"2023-05-13T14:23:33.964Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:35:26.889Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/ 304 - - 8.399 ms\n","timestamp":"2023-05-13T14:36:02.936Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui.css 304 - - 2.746 ms\n","timestamp":"2023-05-13T14:36:02.985Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-init.js 200 27923 - 1.561 ms\n","timestamp":"2023-05-13T14:36:03.001Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-bundle.js 304 - - 10.337 ms\n","timestamp":"2023-05-13T14:36:03.005Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js 304 - - 10.581 ms\n","timestamp":"2023-05-13T14:36:03.007Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/favicon-32x32.png 304 - - 1.100 ms\n","timestamp":"2023-05-13T14:36:04.098Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/ 304 - - 1.772 ms\n","timestamp":"2023-05-13T14:36:19.924Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui.css 304 - - 4.782 ms\n","timestamp":"2023-05-13T14:36:20.013Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-bundle.js 304 - - 4.588 ms\n","timestamp":"2023-05-13T14:36:20.016Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-init.js 304 - - 0.998 ms\n","timestamp":"2023-05-13T14:36:20.024Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js 304 - - 6.681 ms\n","timestamp":"2023-05-13T14:36:20.026Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/favicon-32x32.png 304 - - 1.509 ms\n","timestamp":"2023-05-13T14:36:21.038Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:37:47.686Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/ 304 - - 12.377 ms\n","timestamp":"2023-05-13T14:37:59.076Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui.css 304 - - 3.304 ms\n","timestamp":"2023-05-13T14:37:59.145Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-bundle.js 304 - - 3.798 ms\n","timestamp":"2023-05-13T14:37:59.155Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-init.js 200 28651 - 2.422 ms\n","timestamp":"2023-05-13T14:37:59.167Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js 304 - - 10.419 ms\n","timestamp":"2023-05-13T14:37:59.174Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/favicon-32x32.png 304 - - 1.020 ms\n","timestamp":"2023-05-13T14:38:00.515Z"}
+{"label":"genemo","level":"error","message":"modules validation failed: status: `00.0VDC` is not a valid enum value for path `status`.","timestamp":"2023-05-13T14:40:21.597Z"}
+{"label":"genemo","level":"info","message":"POST /modules/Congelcam%20mokolo 500 103 - 68.148 ms\n","timestamp":"2023-05-13T14:40:21.604Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 1778 - 53.379 ms\n","timestamp":"2023-05-13T14:40:26.591Z"}
+{"label":"genemo","level":"info","message":"POST /modules/Congelcam%20mokolo 200 53 - 44.238 ms\n","timestamp":"2023-05-13T14:41:05.690Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 2170 - 52.357 ms\n","timestamp":"2023-05-13T14:41:10.352Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:43:28.059Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:43:38.885Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:45:48.509Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:46:31.554Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:50:16.743Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:51:02.603Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:51:53.440Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T14:57:41.756Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 2170 - 219.339 ms\n","timestamp":"2023-05-13T15:08:51.360Z"}
+{"label":"genemo","level":"error","message":"getVidangeDTO is not defined","timestamp":"2023-05-13T15:10:24.466Z"}
+{"label":"genemo","level":"info","message":"POST /vidanges 500 42 - 102.555 ms\n","timestamp":"2023-05-13T15:10:24.473Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T15:14:01.335Z"}
+{"label":"genemo","level":"info","message":"POST /vidanges 200 68 - 71.402 ms\n","timestamp":"2023-05-13T15:14:04.117Z"}
+{"label":"genemo","level":"info","message":"POST /vidanges 200 68 - 29.668 ms\n","timestamp":"2023-05-13T15:14:25.449Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T16:07:18.172Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 2353 - 590.730 ms\n","timestamp":"2023-05-13T18:47:32.871Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T18:51:15.375Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T18:53:02.081Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 3090 - 361.618 ms\n","timestamp":"2023-05-13T18:56:27.948Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 3090 - 483.150 ms\n","timestamp":"2023-05-13T18:58:57.448Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T19:00:34.537Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 3090 - 337.906 ms\n","timestamp":"2023-05-13T19:01:12.470Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 3090 - 561.220 ms\n","timestamp":"2023-05-13T19:22:32.260Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-13T19:24:03.540Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 6171 - 286.465 ms\n","timestamp":"2023-05-13T19:26:32.665Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/ 304 - - 1202.826 ms\n","timestamp":"2023-05-15T05:27:31.019Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui.css 304 - - 50.548 ms\n","timestamp":"2023-05-15T05:27:31.430Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-bundle.js 304 - - 50.042 ms\n","timestamp":"2023-05-15T05:27:31.437Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-init.js 200 28655 - 9.853 ms\n","timestamp":"2023-05-15T05:27:31.503Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js 304 - - 60.207 ms\n","timestamp":"2023-05-15T05:27:31.534Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-16T05:08:58.987Z"}
+{"label":"genemo","level":"info","message":"GET /modules/ 200 6171 - 1230.671 ms\n","timestamp":"2023-05-18T12:28:25.020Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/ 304 - - 301.877 ms\n","timestamp":"2023-05-18T12:33:16.005Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui.css 304 - - 44.965 ms\n","timestamp":"2023-05-18T12:33:17.404Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-bundle.js 304 - - 8.353 ms\n","timestamp":"2023-05-18T12:33:17.416Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-standalone-preset.js 304 - - 9.055 ms\n","timestamp":"2023-05-18T12:33:17.420Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/swagger-ui-init.js 304 - - 35.286 ms\n","timestamp":"2023-05-18T12:33:17.471Z"}
+{"label":"genemo","level":"info","message":"GET /api-docs/favicon-32x32.png 304 - - 8.795 ms\n","timestamp":"2023-05-18T12:33:21.537Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-21T04:58:33.003Z"}
+{"label":"genemo","level":"error","message":"trames validation failed: date: Cast to date failed for value \"20/05/2023 17:17:33\" (type string) at path \"date\"","timestamp":"2023-05-21T04:58:34.454Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 500 130 - 388.424 ms\n","timestamp":"2023-05-21T04:58:34.499Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-21T05:00:30.790Z"}
+{"label":"genemo","level":"error","message":"trames validation failed: date: Cast to date failed for value \"20/05/2023 17:17:33\" (type string) at path \"date\"","timestamp":"2023-05-21T05:00:34.267Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 500 130 - 656.916 ms\n","timestamp":"2023-05-21T05:00:34.354Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-21T05:05:04.258Z"}
+{"label":"genemo","level":"error","message":"trames validation failed: date: Cast to date failed for value \"Moment<Invalid date>\" (type Moment) at path \"date\"","timestamp":"2023-05-21T05:05:11.073Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 500 131 - 231.460 ms\n","timestamp":"2023-05-21T05:05:11.093Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-05-22T04:09:13.733Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 200 53 - 408.220 ms\n","timestamp":"2023-05-22T04:09:41.430Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 200 53 - 223.785 ms\n","timestamp":"2023-05-22T04:12:05.438Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 200 53 - 791.929 ms\n","timestamp":"2023-05-22T04:13:04.937Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 200 53 - 179.434 ms\n","timestamp":"2023-05-22T04:13:57.901Z"}
+{"label":"genemo","level":"error","message":"trames validation failed: date: Cast to date failed for value \"21/05/2023 17:30:07\" (type string) at path \"date\"","timestamp":"2023-05-22T04:21:55.423Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 500 130 - 825.494 ms\n","timestamp":"2023-05-22T04:21:55.432Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 200 53 - 53.280 ms\n","timestamp":"2023-05-22T04:22:13.598Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-03T15:14:37.836Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-05T07:42:26.039Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-05T07:43:45.056Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T03:23:45.864Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T03:28:07.516Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T03:28:37.047Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 200 53 - 548.772 ms\n","timestamp":"2023-06-14T03:29:01.775Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 573 - 232.896 ms\n","timestamp":"2023-06-14T03:49:12.345Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 573 - 46.430 ms\n","timestamp":"2023-06-14T03:50:12.469Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 573 - 72.177 ms\n","timestamp":"2023-06-14T03:53:01.096Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 200 53 - 105.960 ms\n","timestamp":"2023-06-14T03:56:53.830Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 625 - 35.768 ms\n","timestamp":"2023-06-14T03:57:45.295Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:02:22.935Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:02:34.896Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 625 - 46.746 ms\n","timestamp":"2023-06-14T04:02:36.799Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:03:24.175Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:03:58.126Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:04:18.574Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 625 - 56.975 ms\n","timestamp":"2023-06-14T04:04:37.415Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:05:35.246Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 625 - 53.504 ms\n","timestamp":"2023-06-14T04:05:45.935Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:09:20.252Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:11:07.412Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:13:39.014Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:15:47.297Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 625 - 148.429 ms\n","timestamp":"2023-06-14T04:15:56.927Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:16:27.177Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:16:47.020Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:17:00.795Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 625 - 64.573 ms\n","timestamp":"2023-06-14T04:17:22.803Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:17:58.898Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:20:24.711Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:21:16.190Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 200 2210 - 61.585 ms\n","timestamp":"2023-06-14T04:21:48.659Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:22:25.870Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 200 2210 - 53.511 ms\n","timestamp":"2023-06-14T04:22:31.126Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:22:48.836Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 200 53 - 107.419 ms\n","timestamp":"2023-06-14T04:22:49.118Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 200 53 - 34.903 ms\n","timestamp":"2023-06-14T04:23:03.798Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 200 2314 - 31.002 ms\n","timestamp":"2023-06-14T04:23:07.620Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 625 - 14.536 ms\n","timestamp":"2023-06-14T04:23:15.329Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:24:22.284Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 625 - 51.518 ms\n","timestamp":"2023-06-14T04:24:40.016Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-14T04:26:23.734Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:09:08.811Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 200 2314 - 181.699 ms\n","timestamp":"2023-06-16T04:09:30.726Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 625 - 37.424 ms\n","timestamp":"2023-06-16T04:09:37.974Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 626 - 54.635 ms\n","timestamp":"2023-06-16T04:11:35.925Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:13:47.177Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:14:01.252Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 626 - 84.807 ms\n","timestamp":"2023-06-16T04:14:39.306Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:15:17.818Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 626 - 66.465 ms\n","timestamp":"2023-06-16T04:15:25.377Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:16:37.990Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 626 - 71.488 ms\n","timestamp":"2023-06-16T04:16:44.277Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:18:42.220Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:19:10.177Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:19:40.535Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:19:48.180Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:20:41.636Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:20:51.038Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:21:02.420Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:21:11.320Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:21:21.837Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:22:21.612Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:23:02.865Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:23:18.884Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:23:54.658Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:24:47.582Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:26:00.344Z"}
+{"label":"genemo","level":"error","message":"duration.AsHours is not a function","timestamp":"2023-06-16T04:26:08.354Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 500 48 - 53.254 ms\n","timestamp":"2023-06-16T04:26:08.365Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:26:43.313Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:26:53.967Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:27:10.442Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 626 - 97.215 ms\n","timestamp":"2023-06-16T04:27:13.100Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:30:07.106Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 626 - 67.142 ms\n","timestamp":"2023-06-16T04:30:07.960Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:34:27.283Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:35:03.834Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:35:30.414Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:36:43.843Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:36:58.192Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:37:06.293Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 626 - 70.420 ms\n","timestamp":"2023-06-16T04:37:28.871Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 626 - 48.514 ms\n","timestamp":"2023-06-16T04:38:40.914Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:39:53.249Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 626 - 87.598 ms\n","timestamp":"2023-06-16T04:40:01.126Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:42:54.751Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:43:03.765Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:43:24.467Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:45:10.448Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:45:37.062Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 626 - 78.440 ms\n","timestamp":"2023-06-16T04:45:41.634Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 627 - 40.220 ms\n","timestamp":"2023-06-16T04:47:15.020Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:50:44.292Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:50:58.381Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:51:11.110Z"}
+{"label":"genemo","level":"error","message":"elapse_total is not defined","timestamp":"2023-06-16T04:51:47.509Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 500 41 - 57.556 ms\n","timestamp":"2023-06-16T04:51:47.522Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:52:16.663Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 568 - 59.655 ms\n","timestamp":"2023-06-16T04:52:17.338Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:53:58.212Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 682 - 87.292 ms\n","timestamp":"2023-06-16T04:54:08.221Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:54:56.787Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-16T04:55:15.250Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 682 - 53.208 ms\n","timestamp":"2023-06-16T04:55:15.681Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/ 200 682 - 399.261 ms\n","timestamp":"2023-06-16T17:48:39.618Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 200 2314 - 132.769 ms\n","timestamp":"2023-06-16T17:48:54.061Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-17T04:55:17.616Z"}
+{"label":"genemo","level":"error","message":"Cannot read properties of undefined (reading 'getTimezoneOffset')","timestamp":"2023-06-17T04:55:22.726Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 500 79 - 159.764 ms\n","timestamp":"2023-06-17T04:55:22.739Z"}
+{"label":"genemo","level":"error","message":"Cannot read properties of undefined (reading 'getTimezoneOffset')","timestamp":"2023-06-17T04:55:24.967Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 500 79 - 16.417 ms\n","timestamp":"2023-06-17T04:55:24.969Z"}
+{"label":"genemo","level":"error","message":"Cannot read properties of undefined (reading 'getTimezoneOffset')","timestamp":"2023-06-17T04:55:25.980Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 500 79 - 23.087 ms\n","timestamp":"2023-06-17T04:55:25.985Z"}
+{"label":"genemo","level":"error","message":"Cannot read properties of undefined (reading 'getTimezoneOffset')","timestamp":"2023-06-17T04:55:26.787Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 500 79 - 22.105 ms\n","timestamp":"2023-06-17T04:55:26.790Z"}
+{"label":"genemo","level":"error","message":"Cannot read properties of undefined (reading 'getTimezoneOffset')","timestamp":"2023-06-17T04:55:27.441Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 500 79 - 24.770 ms\n","timestamp":"2023-06-17T04:55:27.445Z"}
+{"label":"genemo","level":"error","message":"Cannot read properties of undefined (reading 'getTimezoneOffset')","timestamp":"2023-06-17T04:55:28.203Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 500 79 - 15.817 ms\n","timestamp":"2023-06-17T04:55:28.205Z"}
+{"label":"genemo","level":"error","message":"Cannot read properties of undefined (reading 'getTimezoneOffset')","timestamp":"2023-06-17T04:55:28.996Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 500 79 - 17.338 ms\n","timestamp":"2023-06-17T04:55:28.997Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-17T04:56:09.749Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 200 2314 - 94.465 ms\n","timestamp":"2023-06-17T04:56:10.159Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 682 - 79.317 ms\n","timestamp":"2023-06-17T04:58:42.897Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 630 - 53.359 ms\n","timestamp":"2023-06-17T05:13:44.643Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-17T05:16:27.009Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 630 - 60.690 ms\n","timestamp":"2023-06-17T05:16:27.872Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 200 53 - 104.934 ms\n","timestamp":"2023-06-17T05:17:35.454Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 630 - 78.901 ms\n","timestamp":"2023-06-17T05:18:41.066Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 628 - 46.237 ms\n","timestamp":"2023-06-17T05:20:24.397Z"}
+{"label":"genemo","level":"info","message":"POST /modules/MEGATEC 200 53 - 33.595 ms\n","timestamp":"2023-06-17T05:21:59.286Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 628 - 14.814 ms\n","timestamp":"2023-06-17T05:22:17.407Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 682 - 30.939 ms\n","timestamp":"2023-06-17T05:23:38.584Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 682 - 14.602 ms\n","timestamp":"2023-06-17T05:25:26.934Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/trames 200 2366 - 36.974 ms\n","timestamp":"2023-06-17T05:25:41.136Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-17T05:27:30.543Z"}
+{"label":"genemo","level":"info","message":"Connected to MongoDB!!","timestamp":"2023-06-17T05:30:34.387Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 729 - 61.418 ms\n","timestamp":"2023-06-17T05:30:59.056Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 733 - 26.834 ms\n","timestamp":"2023-06-17T05:32:08.370Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4 200 733 - 44.521 ms\n","timestamp":"2023-06-17T05:43:51.141Z"}
+{"label":"genemo","level":"info","message":"GET /modules/645a38c1dd98a2d5bf7cefa4/ 200 733 - 17.123 ms\n","timestamp":"2023-06-17T05:44:29.784Z"}

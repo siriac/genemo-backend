@@ -1,5 +1,5 @@
 import { getPaginationInfo } from '../lib/util';
-
+import {getLocalTime} from "../lib/dateTime";
 export const getTrameDTO = (trame) => ({
   id: trame._id,
   temp: trame.temp,
@@ -10,7 +10,7 @@ export const getTrameDTO = (trame) => ({
   ph3: trame.ph3,
   freq: trame.freq,
   oilPress: trame.oilPress,
-  date:trame.date,
+  date:getLocalTime(trame.date),//trame.date,
   createdAt:trame.createdAt,
   idModule:trame.idModule
 
@@ -48,7 +48,7 @@ export const getUpdateTrameResponseDTO = (trame) => ({
   ph3: trame.ph3,
   freq: trame.freq,
   oilPress: trame.oilPress,
-  date:trame.date,
+  date:getLocalTime(trame.date),
   createdAt:trame.createdAt,
   idModule:trame.idModule
 });

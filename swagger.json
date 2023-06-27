@@ -38,9 +38,32 @@
             "schema": {
               "type": "object",
               "properties": {
-                "trame": {
-                  "type": "object",
-                  "$ref": "#/definitions/Trame"
+                "temp": {
+                  "type": "string"
+                },
+                "fuel": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "ph1": {
+                  "type": "string"
+                },
+                "ph2": {
+                  "type": "string"
+                },
+                "ph3": {
+                  "type": "string"
+                },
+                "freq": {
+                  "type": "string"
+                },
+                "oilPress": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string"
                 }
               }
             }
@@ -52,7 +75,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/todosResponse"
+                "$ref": "#/definitions/moduleCreatedResponse"
               }
             }
           },
@@ -322,7 +345,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "task": {
+                  "Vidange": {
                     "type": "object",
                     "$ref": "#/definitions/Vidange"
                   }
@@ -642,6 +665,34 @@
                 "description":"Identifiant du groupe qui a été vidangé"
             }
             }
+          },
+          "elapse_total_hours_minutes":{
+            "type":"object",
+            "properties":{
+              "hours":{
+                "type":"integer",
+                "description":"Nombre d'heure de fonctionnement"
+              },
+              "minutes":{
+                "type":"integer",
+                "description":"Minutes"
+              }
+            },
+            "description":"Durée de fonctionnement du groupe format heures et minutes"
+          },
+          "elapse_hours_minutes":{
+            "type":"object",
+            "properties":{
+              "hours":{
+                "type":"integer",
+                "description":"Nombre d'heure de fonctionnement"
+              },
+              "minutes":{
+                "type":"integer",
+                "description":"Minutes"
+              }
+            },
+            "description":"Durée de fonctionnement du groupe depuis la derniére vidange format heures et minutes"
           }
         }
     },
@@ -699,6 +750,18 @@
           },
           "date": {
             "type": "string"
+          }
+        }
+      },
+      "moduleCreatedResponse":{
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "idModule": {
+            "type": "string",
+            "description":"Identifiant du module"
           }
         }
       },

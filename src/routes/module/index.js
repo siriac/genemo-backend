@@ -27,6 +27,7 @@ import {
   getDeleteTrameResponseDTO,
 getTrameByIdResponseDTO,
 getTrameResponseDTO,
+getTrameDTO,
 getUpdateTrameResponseDTO,
 } from '../../dto/trame.dto';
 import {
@@ -47,6 +48,7 @@ import  {Vidange} from "../../models/vidange";
 import {Running} from "../../models/running";
 import { Activities } from "../../models/activities";
 import {toUpperCaseStationName} from "../../lib/util";
+import {getLocalTime,getDurationHoursAndMinutes} from "../../lib/dateTime";
 const router = Router();
 const lastDate= async (id)=>{
   const lastData = await Data.find({ idModule:id })
@@ -71,6 +73,7 @@ router.post("/:stationName", toUpperCaseStationName,async (req, res, next)=>{
     console.log(stationName)
     console.log(module);
     console.log("module");
+
     if(module){
 
       switch(status)
@@ -93,6 +96,7 @@ router.post("/:stationName", toUpperCaseStationName,async (req, res, next)=>{
        * mettre à jour le module
        */
       await Module.findByIdAndUpdate(module._id,body,{new:true});
+
       trame=await Trame.create({...body,idModule:module._id});
     }
     else{
@@ -105,10 +109,10 @@ router.post("/:stationName", toUpperCaseStationName,async (req, res, next)=>{
             //cree une nouvelle trame
     trame=await Trame.create({...body,idModule:module._id});
     }
-    console.log(global.io.emit("message",{
+    global.io.emit("incomingTrame",{
       module,
       trame
-    }));
+    });
     res.status(200).json({
       status:"Ok",
       idModule:module._id.toString(),
@@ -153,10 +157,12 @@ router.get("/", async (req, res, next) => {
     ]);
     const {data,pagination}=getModuleResponseDTO(mods, page, limit, count);
     const modules=await Promise.all(data.map(async d=>{
-      const v=await Vidange.find().sort({date:-1}).limit(1);
+      const v=await Vidange.find({idModule:d.id}).sort({date:-1}).limit(1);
+      const t=await Trame.find({idModule:d.id}).sort({date:-1}).limit(1);
       return {
         ...d,
-        infoVidange:v.length>0?getVidangeDTO(v[0]):{} 
+        infoVidange:v.length>0?getVidangeDTO(v[0]):{},
+        lastInfoTrame:t.length>0?getTrameDTO(t[0]):{}
       }
     }))
     res.json(
@@ -177,7 +183,12 @@ router.get("/:id", validateObjectId, async (req, res, next) => {
     if (!module) {
       throw new NotFoundError("Id Not Found");
     }
-    res.json(getModuleByIdResponseDTO(module));
+    const modDTO=getModuleByIdResponseDTO(module);
+    const t=await Trame.find({idModule:module._id}).sort({date:-1}).limit(1);
+    res.json({
+      ...modDTO,
+      lastInfoTrame:t.length>0?getTrameDTO(t[0]):{}
+    });
     //res.json(getModuleByIdResponseDTO(module));
   } catch (err) {
     next(err);

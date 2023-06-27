@@ -1,4 +1,5 @@
 import { getPaginationInfo } from "../lib/util";
+import {getDurationHoursAndMinutes} from "../lib/dateTime";
 
 export const getModuleDTO = (module) => ({
   id: module._id,
@@ -19,7 +20,9 @@ export const getModuleDTO = (module) => ({
   status: module.status,
   lastData: module?.lastData,
   elapse: module.elapse,
+  elapse_total_hours_minutes: getDurationHoursAndMinutes(module.elapse_total),//module.elapse_total,
   elapse_total: module.elapse_total,
+  elapse_hours_minutes: getDurationHoursAndMinutes(module.elapse),//module.elapse_total,
 
 });
 

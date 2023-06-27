@@ -5,7 +5,11 @@ import {
   getVidangeByIdResponseDTO,
   getVidangeResponseDTO,
   getUpdateVidangeResponseDTO,
+  getVidangeDTO
 } from "../../dto/vidange.dto";
+import {
+  getModuleDTO
+} from "../../dto/module.dto";
 import { NotFoundError } from "../../lib/errors";
 import { validateObjectId } from "../../middlewares/validations";
 import { Vidange } from "../../models/vidange";
@@ -51,7 +55,7 @@ router.get("/:id", validateObjectId, async (req, res, next) => {
 router.post("/", async (req, res, next) => {
   try {
     const { idModule, date, remarque } = req.body;
-    const module = await Module.findById(idModule);
+    let module = await Module.findById(idModule);
     if (!module) {
       const err = new Error("Id module introuvable");
       err.status = 404;
@@ -62,7 +66,7 @@ router.post("/", async (req, res, next) => {
       date,
       remarque,
     });
-    await Module.findByIdAndUpdate(
+    module=await Module.findByIdAndUpdate(
       idModule,
       {
         elapse: {
@@ -77,6 +81,12 @@ router.post("/", async (req, res, next) => {
       },
       { new: true }
     );
+    //send socket
+    const moduleDto=getModuleDTO(module)
+   global.io.emit("vidangeCreated",{
+    ...moduleDto,
+    infoVidange:getVidangeDTO(vidange)
+  });
     res.json(getCreateVidangeResponseDTO(vidange));
   } catch (error) {
     next(error);

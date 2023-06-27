@@ -7,28 +7,28 @@ const trameSchema = new Schema(
         ref: "modules",
       },
     temp:{
-        type:String
+        type:Number
     },
     fuel:{
-        type:String
+        type:Number
     },
     bat:{
-        type:String,
+        type:Number,
     },
     ph1:{
-        type:String
+        type:Number
     },
     ph2:{
-        type:String
+        type:Number
     },
     ph3:{
-        type:String
+        type:Number
     },
     freq:{
-        type:String
+        type:Number
     },
     oilPress:{
-        type:String
+        type:Number
     },
     date:{
         type:Date
