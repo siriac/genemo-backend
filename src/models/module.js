@@ -2,6 +2,10 @@ import { Schema, model } from "mongoose";
 
 const moduleSchema = new Schema(
   {
+    idRegion: {
+      type: Schema.Types.ObjectId,
+      ref: "regions",
+    },
     dataRequired: {
       temp: {
         type: Number,

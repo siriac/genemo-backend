@@ -41,6 +41,7 @@ const trameSchema = new Schema(
           "STOPPED",
           "RUNNING",
           "RUNNING/FAULT",
+          "NOT_RUNNING/VIDANGE"
         ],
       }
   },

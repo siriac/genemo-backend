@@ -8,6 +8,7 @@
         "NOT_RUN_FAULT":"NOT_RUNNING/FAULT",
         "STOPPED":"STOPPED",
         "RUNNING":"RUNNING",
-        "RUN_FAULT":"RUNNING/FAULT"
+        "RUN_FAULT":"RUNNING/FAULT",
+        "NOT_RUNNING_VID":"NOT_RUNNING/VIDANGE"
     }
     }

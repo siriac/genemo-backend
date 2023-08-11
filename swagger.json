@@ -12,9 +12,17 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "schemes": ["http"],
-  "host": "139.59.208.55:4000",
+  "schemes": ["http","https"],
+  "host": "localhost:4000",
   "basePath": "/",
+  "securityDefinitions":{
+    "bearerAuth":{
+      "type":"apiKey",
+      "name":"Authorization",
+      "in":"header",
+      "descriptions":">- Enter the token with the `Bearer:` prefix, e.g. Bearer abcdefg1234" 
+    }
+      },
   "paths": {
     "/modules/{stationName}": {
       "post": {
@@ -90,6 +98,9 @@
     },
     "/modules/{idModule}": {
         "get": {
+          "security":[{
+            "bearerAuth":[]
+          }],
           "summary": "Obtenir les informations sur un le groupe donc l'identifiant est idModule",
           "description": "Obtenir les informations sur un le groupe donc l'identifiant est idModule",
           "consumes": ["application/json"],
@@ -116,6 +127,18 @@
               "description": "Invalid status value",
               "schema": {
                 "$ref": "#/definitions/InvalidResponse"
+              }
+            },
+            "401": {
+              "description": "Unauthorized!",
+              "schema": {
+                "$ref": "#/definitions/UnautorizedError"
+              }
+            },
+            "403": {
+              "description": "Role Unauthorized!",
+              "schema": {
+                "$ref": "#/definitions/PermissionError"
               }
             }
           }
@@ -295,6 +318,9 @@
           "summary": "Obtenir tous les modules",
           "description": "Obtenir tous les modules",
           "consumes": ["application/json"],
+          "security":[{
+            "bearerAuth":[]
+          }],
           "parameters": [
               {
                 "name": "page",
@@ -325,6 +351,18 @@
               "description": "Invalid status value",
               "schema": {
                 "$ref": "#/definitions/InvalidResponse"
+              }
+            },
+            "401": {
+              "description": "Unauthorized!",
+              "schema": {
+                "$ref": "#/definitions/UnautorizedError"
+              }
+            },
+            "403": {
+              "description": "Role Unauthorized!",
+              "schema": {
+                "$ref": "#/definitions/PermissionError"
               }
             }
           }
@@ -496,6 +534,454 @@
             "description": "Invalid status value",
             "schema": {
               "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    },
+    "/users":{
+      "get": {
+        "summary": "Obtenir tous les utilisateurs du systeme",
+        "description": "Obtenir tous les utilisateurs",
+        "consumes": ["application/json"],
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "Numero de la page",
+              "required": false,
+              "type": "integer"
+          },
+          {
+              "name": "limit",
+              "in": "query",
+              "description": "Nombre d'element à afficher dans la page",
+              "required": false,
+              "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/user"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/users/{userId}":{
+      "put": {
+        "summary": "Mettre à jour un utilisateur",
+        "description": "Update the user",
+        "produces": ["application/json"],
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "identifiant de l'utilisateur qui doit etre mise à jour",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "object user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "details": {
+                  "type": "object",
+                  "$ref": "#/definitions/Details"
+                },
+                "credentials": {
+                  "type": "object",
+                  "$ref": "#/definitions/Credentials"
+                },
+                "assignRole": {
+                  "type": "object",
+                  "$ref": "#/definitions/AssignRole"
+                },
+                "unassignRole": {
+                  "type": "object",
+                  "$ref": "#/definitions/UnassignRole"
+                },
+                "assignTown": {
+                  "type": "object",
+                  "$ref": "#/definitions/AssignTown"
+                },
+                "unassignTown": {
+                  "type": "object",
+                  "$ref": "#/definitions/UnassignTown"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref":"#/definitions/userUpdated"
+            }
+          },
+          "404": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/auth/signup":{
+      "post": {
+        "summary": "Creation d'un nouveau utilisateur",
+        "description": "Crée un nouveau utilisateur dans le systeme",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Objet user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "description":"username du nouveau utilisateur"
+                },
+                "email": {
+                  "type": "string",
+                  "description":"Email du nouveau utilisateur"
+                },
+                "password": {
+                  "type": "string",
+                  "description":"Password du nouveau  utilisateur"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref":"#/definitions/userCreated"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    },
+    "/auth/signin":{
+      "post": {
+        "summary": "Authentification",
+        "description": "S'authentifier dans l'application",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Objet user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "description":"username du nouveau utilisateur"
+                },
+                "password": {
+                  "type": "string",
+                  "description":"Password du nouveau  utilisateur"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref":"#/definitions/userAuthenticate"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    },
+    "/roles":{
+      "get": {
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "summary": "Obtenir tous les roles",
+        "description": "Obtenir tous les roles",
+        "consumes": ["application/json"],
+        "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "Numero de la page",
+              "required": false,
+              "type": "integer"
+          },
+          {
+              "name": "limit",
+              "in": "query",
+              "description": "Nombre d'element à afficher dans la page",
+              "required": false,
+              "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/role"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/regions":{
+      "get": {
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "summary": "Obtenir toutes les regions",
+        "description": "Obtenir toutes les regions",
+        "consumes": ["application/json"],
+        "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "Numero de la page",
+              "required": false,
+              "type": "integer"
+          },
+          {
+              "name": "limit",
+              "in": "query",
+              "description": "Nombre d'element à afficher dans la page",
+              "required": false,
+              "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/region"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/roleToAssign":{
+      "get": {
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "summary": "Obtenir tous les roles à assigner à un utilisateur",
+        "description": "Obtenir tous les roles à assigner à un utilisateur",
+        "consumes": ["application/json"],
+        "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "Numero de la page",
+              "required": false,
+              "type": "integer"
+          },
+          {
+              "name": "limit",
+              "in": "query",
+              "description": "Nombre d'element à afficher dans la page",
+              "required": false,
+              "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/role"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/regionToAssign":{
+      "get": {
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "summary": "Obtenir tous les regions à assigner à un utilisateur",
+        "description": "Obtenir tous les regions à assigner à un utilisateur",
+        "consumes": ["application/json"],
+        "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "Numero de la page",
+              "required": false,
+              "type": "integer"
+          },
+          {
+              "name": "limit",
+              "in": "query",
+              "description": "Nombre d'element à afficher dans la page",
+              "required": false,
+              "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/role"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
             }
           }
         }
@@ -990,6 +1476,218 @@
                 "type": "string"
               } 
         }
+      },
+      "user":{
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string",
+                "description":"identifiant de l'utilisateur"
+              },
+              "username": {
+                "type": "string",
+                "description":"username de l'utilisateur"
+              } ,
+              "email": {
+                "type": "string",
+                "description":"email de l'utilisateur"
+              } ,
+              "idTownAuthorise": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/region"
+                }
+              },
+              "roles": {
+                "type": "array",
+                "items":{
+                  "$ref": "#/definitions/role"
+                }
+              } 
+        }
+      },
+      "userUpdated":{
+        "type": "object",
+        "properties": {
+          "message":{
+            "type":"string"
+          },
+            "id": {
+                "type": "string",
+                "description":"identifiant de l'utilisateur"
+              },
+              "username": {
+                "type": "string",
+                "description":"username de l'utilisateur"
+              } ,
+              "email": {
+                "type": "string",
+                "description":"email de l'utilisateur"
+              } ,
+              "idTownAuthorise": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/region"
+                }
+              },
+              "roles": {
+                "type": "array",
+                "items":{
+                  "$ref": "#/definitions/role"
+                }
+              } 
+        }
+      },
+      "role":{
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string",
+                "description":"identifiant du role"
+              },
+              "name": {
+                "type": "string",
+                "description":"nom du role"
+              }
+        }
+      },
+      "region":{
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string",
+                "description":"identifiant de la region"
+              },
+              "name": {
+                "type": "string",
+                "description":"nom de la region"
+              }
+        }
+      },
+      "Details":{
+        "type": "object",
+        "properties": {
+            "username": {
+                "type": "string",
+                "description":"username de l'utilisateur"
+              },
+              "email": {
+                "type": "string",
+                "description":"email de l'utilisateur"
+              }
+        }
+      },
+      "Credentials":{
+        "type": "object",
+        "properties": {
+            "password": {
+                "type": "string",
+                "description":"ancien mot de passe de l'utilisateur"
+              },
+              "newPassword": {
+                "type": "string",
+                "description":"nouveau mot de passe de l'utilisateur"
+              }
+        }
+      },
+      "AssignRole":{
+        "type":"object",
+        "properties":{
+          "roles":{
+            "type":"array",
+            "items":{
+              "$ref":"#/definitions/idRole"
+            }
+          }
+        }
+      },
+      "UnassignRole":{
+        "type":"object",
+        "properties":{
+          "roles":{
+            "type":"array",
+            "items":{
+              "$ref":"#/definitions/idRole"
+            }
+          }
+        }
+      },
+      "AssignTown":{
+        "type":"object",
+        "properties":{
+          "roles":{
+            "type":"array",
+            "items":{
+              "$ref":"#/definitions/idRegion"
+            }
+          }
+        }
+      },
+      "UnassignTown":{
+        "type":"object",
+        "properties":{
+          "roles":{
+            "type":"array",
+            "items":{
+              "$ref":"#/definitions/idRegion"
+            }
+          }
+        }
+      },
+      "idRole":{
+        "type":"string",
+        "description":"identifiant du role"
+      },
+      "idRegion":{
+        "type":"string",
+        "description":"identifiant de la region"
+      },
+      "userCreated":{
+        "type":"object",
+        "properties":{
+          "message":{
+            "type":"string",
+            "description":"Message de succée de création"
+          },
+          "id":{
+            "type":"string",
+            "description":"identifiant de l'utilisateur crée"
+          }
+        }
+      },
+      "userAuthenticate":{
+        "type":"object",
+        "properties":{
+          "id":{
+            "type":"string",
+            "description":"Identifiant de l'utilisateur qui s'est authentifié"
+          },
+          "username":{
+            "type":"string",
+            "description":"username de l'utilisateur connecté"
+          },
+          "email":{
+            "type":"string"
+          },
+          "idTownAuthorise": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/region"
+            }
+          },
+          "roles": {
+            "type": "array",
+            "items":{
+              "$ref": "#/definitions/role"
+            }
+          } 
+        }
+      },
+      "UnautorizedError":{
+        "description":"Access token is missing or invalid"
+      },
+      "PermissionError":{
+        "description":"User's role is not authorized"
       }
   }
 }

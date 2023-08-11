@@ -1,9 +1,9 @@
 import { getPaginationInfo } from '../lib/util';
-
+import {getLocalTime} from "../lib/dateTime";
 export const getVidangeDTO = (vidange) => ({
   id: vidange._id,
   remarque: vidange.remarque,
-  date: vidange.date,
+  date: getLocalTime(vidange.date),
   createdAt: vidange.createdAt,
   idModule:vidange.idModule,
   doBy:vidange.doBy

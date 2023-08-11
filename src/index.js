@@ -9,8 +9,11 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from '../swagger.json';
+import {User,Role} from '../src/models'
+import bcrypt from 'bcryptjs';
 const httpServer = createServer();
 const app = express();
+//const keycloak=require('../config/keycloak-config').initKeycloak();
 const io = new Server(httpServer, {
   cors: {
       //origin: "http://192.168.100.26:4200"
@@ -22,7 +25,8 @@ const port2 = config.get('port2');
 const httpReqLogFormat =
   ':method :url :status :res[content-length] - :response-time ms';
 const httpReqLogger = morgan(httpReqLogFormat, { stream: logger.stream });
-
+//middleware pour verifier l'authentification via keycloak
+//app.use(keycloak.middleware())
 // connect to database
 initializeDB();
 
@@ -54,9 +58,41 @@ app.use((req, res, next) => {
 });
 app.use(express.json());
 app.use(httpReqLogger);
+
+//create admin
+function initial() {
+  new Role({
+    name: "user"
+  }).save(err => {
+    if (err) {
+      console.log("error", err);
+    }
+    console.log("added 'user' to roles collection");
+  });
+  new Role({
+    name: "admin"
+  }).save((err,role) => {
+    if (err) {
+      console.log("error", err);
+    }
+    const user= new User({
+      username:"admin",
+      email:"admin@genemo.com",
+      password:bcrypt.hashSync("admin", 8),
+      roles:[role._id]
+    })
+    user.save((err, user) => {
+      if (err) {
+        console.log(err)
+      }
+    });
+    console.log("added 'user' to roles collection");
+  });
+}
+//initial();
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // routes
-app.use('/', routes);
+app.use('/',routes);
 
 // error handling
 app.use(errorHandler);

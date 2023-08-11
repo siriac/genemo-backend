@@ -11,7 +11,7 @@ import { validateObjectId } from '../../middlewares/validations';
 import { Menu } from '../../models/menu';
 
 const router = Router();
-
+console.log("Menu")
 router.get('/', async (req, res, next) => {
   try {
     const { page = 1, limit = 10 } = req.query;

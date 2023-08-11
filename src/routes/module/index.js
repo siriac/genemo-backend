@@ -38,6 +38,13 @@ import {
   getUpdateVidangeResponseDTO,
   getVidangeDTO
 } from "../../dto/vidange.dto";
+import {
+  getCreateRegionResponseDTO,
+  getDeleteRegionResponseDTO,
+  getRegionByIdResponseDTO,
+  getRegionResponseDTO,
+  getUpdateRegionResponseDTO,
+} from '../../dto/region.dto';
 import { NotFoundError } from "../../lib/errors";
 import { validateObjectId } from "../../middlewares/validations";
 import { Module } from "../../models/module";
@@ -45,9 +52,11 @@ import { Data } from "../../models/data";
 import {Trame} from "../../models/trame";
 import {StandBy} from "../../models/standBy";
 import  {Vidange} from "../../models/vidange";
+import {Region} from "../../models/region";
 import {Running} from "../../models/running";
 import { Activities } from "../../models/activities";
 import {toUpperCaseStationName} from "../../lib/util";
+import {authJwt} from '../../middlewares';
 import {getLocalTime,getDurationHoursAndMinutes} from "../../lib/dateTime";
 const router = Router();
 const lastDate= async (id)=>{
@@ -57,9 +66,107 @@ const lastDate= async (id)=>{
   return lastData
 }
 const STATUS = config.get('status');
+router.post("/", toUpperCaseStationName,async (req, res, next)=>{
+  try {
+    const {body={}}=req;
+    const dataSocket={};
+    console.log(req.body);
+    const{stationName}=req.body;
+    console.log(stationName);
+    const {temp,fuel,bat,ph1,ph2, ph3,freq,oilPress,status,date,elapsed,position={},regionName}=body;
+    if(elapsed){
+      elapsed.milliseconds=0;
+      elapsed.seconds=0;
+    }
+    let d2=moment.duration(elapsed);
+    let d1,trame={};
+    let vidange={};
+    let module=await Module.findOne({stationName }).exec();
+    console.log(stationName)
+    console.log(module);
+    console.log("module");
+    /**
+     * On verifie si la region existe
+     */
+    let region=await Region.findOne({name:regionName});
+    if(!region){
+      region=await Region.create({
+        name:req.body.regionName
+      });
+    }
+    if(module){
+
+      switch(status)
+      {
+        case STATUS.NOT_RUNNING:
+        break;
+        case STATUS.RUNNING:
+        break;
+        case STATUS.STOPPED:
+          //calculate duration total and duration partiel
+          d1=moment.duration(module.elapse_total);
+          body.elapse_total=d1.add(d2)._data;
+            d1=moment.duration(module.elapse);
+            body.elapse=d1.add(d2)._data;
+        break;
+        case STATUS.NOT_RUNNING_VID:
+          //je cree la vidange
+          vidange = await Vidange.create({
+            idModule:module._id,
+            date
+          });
+          //je mets le compteur temporaire 0
+          body.elapse={
+            milliseconds:0,
+            seconds:0,
+            minutes:0,
+            hours:0,
+            days:0,
+            months:0,
+            years:0
+          }
+        break;
+        default:
+          console.log("Status non reconnu")
+      }
+      /**
+       * mettre à jour le module
+       */
+      module=await Module.findByIdAndUpdate(module._id,body,{new:true});
+
+      trame=await Trame.create({...body,idModule:module._id});
+    }
+    else{
+            // cree un nouveau module
+            module = await Module.create({
+              ...body,
+              stationName: stationName,
+              position: position,
+              idRegion:region._id
+            });
+            console.log(module);
+            //cree une nouvelle trame
+    trame=await Trame.create({...body,idModule:module._id});
+    console.log(trame)
+    }
+
+    global.io.emit("incomingTrame",{
+      module:getModuleDTO(module),
+      trame:getTrameDTO(trame),
+     vidange:Object.keys(vidange).length===0?vidange: getVidangeDTO(vidange),
+    });
+    res.status(200).json({
+      status:"Ok",
+      idModule:module._id.toString(),
+    })
+  } catch (error) {
+    next(error)
+  }
+})
 router.post("/:stationName", toUpperCaseStationName,async (req, res, next)=>{
   try {
     const {body={}}=req;
+    const dataSocket={};
     console.log(req.body);
     const{stationName}=req.params;
     const {temp,fuel,bat,ph1,ph2, ph3,freq,oilPress,status,date,elapsed,position={}}=body;
@@ -69,6 +176,7 @@ router.post("/:stationName", toUpperCaseStationName,async (req, res, next)=>{
     }
     let d2=moment.duration(elapsed);
     let d1,trame={};
+    let vidange={};
     let module=await Module.findOne({stationName }).exec();
     console.log(stationName)
     console.log(module);
@@ -89,13 +197,30 @@ router.post("/:stationName", toUpperCaseStationName,async (req, res, next)=>{
             d1=moment.duration(module.elapse);
             body.elapse=d1.add(d2)._data;
         break;
+        case STATUS.NOT_RUNNING_VID:
+          //je cree la vidange
+          vidange = await Vidange.create({
+            idModule:module._id,
+            date
+          });
+          //je mets le compteur temporaire 0
+          body.elapse={
+            milliseconds:0,
+            seconds:0,
+            minutes:0,
+            hours:0,
+            days:0,
+            months:0,
+            years:0
+          }
+        break;
         default:
           console.log("Status non reconnu")
       }
       /**
        * mettre à jour le module
        */
-      await Module.findByIdAndUpdate(module._id,body,{new:true});
+      module=await Module.findByIdAndUpdate(module._id,body,{new:true});
 
       trame=await Trame.create({...body,idModule:module._id});
     }
@@ -106,12 +231,15 @@ router.post("/:stationName", toUpperCaseStationName,async (req, res, next)=>{
               stationName: stationName,
               position: position,
             });
+            console.log(module);
             //cree une nouvelle trame
     trame=await Trame.create({...body,idModule:module._id});
+    console.log(trame)
     }
     global.io.emit("incomingTrame",{
-      module,
-      trame
+      module:getModuleDTO(module),
+      trame:getTrameDTO(trame),
+     vidange:Object.keys(vidange).length===0?vidange: getVidangeDTO(vidange),
     });
     res.status(200).json({
       status:"Ok",
@@ -145,7 +273,7 @@ res.status(200).send({
   next(error)
 }
 })*/
-router.get("/", async (req, res, next) => {
+/*router.get("/", async (req, res, next) => {
   try {
     const { page = 1, limit = 10, name=''} = req.query;
     const [mods, count] = await Promise.all([
@@ -174,9 +302,40 @@ router.get("/", async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+});*/
+/*ici on mettra le protect de keycloak puis le middleware qui permet 
+de se rassurer que la region qu'il veut consulter fait partir de ses regions qu'il est autoriser à consulter*/
+router.get("/", [authJwt.verifyToken], authJwt.autorize(["admin"]), async (req, res, next) => {
+  try {
+    const { page = 1, limit = 10, name=''} = req.query;
+    const [mods, count] = await Promise.all([
+      Module.find({ stationName:{$regex: name,$options: 'i'}})
+        .skip((page - 1) * limit)
+        .limit(limit)
+        .sort({ createdAt: -1 }),
+      Module.count({ stationName:{$regex: name,$options: 'i'}}),
+    ]);
+    const {data,pagination}=getModuleResponseDTO(mods, page, limit, count);
+    const modules=await Promise.all(data.map(async d=>{
+      const v=await Vidange.find({idModule:d.id}).sort({date:-1}).limit(1);
+      const t=await Trame.find({idModule:d.id}).sort({date:-1}).limit(1);
+      return {
+        ...d,
+        infoVidange:v.length>0?getVidangeDTO(v[0]):{},
+        lastInfoTrame:t.length>0?getTrameDTO(t[0]):{}
+      }
+    }))
+    res.json(
+      {
+        modules,
+        pagination
+      }
+    );
+  } catch (error) {
+    next(error);
+  }
 });
-
-router.get("/:id", validateObjectId, async (req, res, next) => {
+router.get("/:id",[authJwt.verifyToken,validateObjectId,authJwt.autorizeTown],authJwt.autorize(["admin","user"]),async (req, res, next) => {
   try {
     const id = req.params.id;
     const module = await Module.findOne({ _id: id });
@@ -185,9 +344,11 @@ router.get("/:id", validateObjectId, async (req, res, next) => {
     }
     const modDTO=getModuleByIdResponseDTO(module);
     const t=await Trame.find({idModule:module._id}).sort({date:-1}).limit(1);
+    const v=await Vidange.find({idModule:module._id}).sort({date:-1}).limit(1);
     res.json({
       ...modDTO,
-      lastInfoTrame:t.length>0?getTrameDTO(t[0]):{}
+      lastInfoTrame:t.length>0?getTrameDTO(t[0]):{},
+      lastInfoVidange:v.length>0?getVidangeDTO(v[0]):{}
     });
     //res.json(getModuleByIdResponseDTO(module));
   } catch (err) {

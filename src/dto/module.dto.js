@@ -3,6 +3,7 @@ import {getDurationHoursAndMinutes} from "../lib/dateTime";
 
 export const getModuleDTO = (module) => ({
   id: module._id,
+  idRegion:module.idRegion,
   stationName: module.stationName,
   position: module.position,
   created: module.created,
@@ -38,6 +39,7 @@ export const getModuleByIdResponseDTO = (module) => ({
 export const getCreateModuleResponseDTO = (module) => ({
   message: "Module crée avec succés",
   id: module._id,
+  idRegion:module.idRegion,
   stationName: module.stationName,
   stationName: module.stationName,
   position: module.position,
@@ -68,6 +70,7 @@ export const getUpdateModuleResponseDTO = (module) => ({
   message: "Module mis à jour avec succés",
   id: module._id,
   stationName: module.stationName,
+  idRegion:module.idRegion,
   position: module.position,
   created: module.created,
   duree_fonctionnement: module.duree_fonctionnement,

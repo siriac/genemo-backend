@@ -14,6 +14,7 @@ var keycloakConfig = {
 };
 
 function initKeycloak() {
+    console.log("**************")
     if (_keycloak) {
         console.warn("Trying to init Keycloak again!");
         return _keycloak;
@@ -30,6 +31,7 @@ function getKeycloak() {
     if (!_keycloak){
         console.error('Keycloak has not been initialized. Please called init first.');
     } 
+    console.log(_keycloak)
     return _keycloak;
 }
 
