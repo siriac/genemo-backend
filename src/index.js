@@ -11,6 +11,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from '../swagger.json';
 import {User,Role} from '../src/models'
 import bcrypt from 'bcryptjs';
+import {cbSocket} from '../src/service/socket.service';
 const httpServer = createServer();
 const app = express();
 //const keycloak=require('../config/keycloak-config').initKeycloak();
@@ -100,13 +101,13 @@ app.use(errorHandler);
 app.use((req, res, next) => {
   res.status(404).json({ message: 'Path not found!' });
 });
-io.on('connection', (socket) => {
+/*io.on('connection', (socket) => {
   console.log(`a user connected socket.id ${socket.id}`);
   socket.on('disconnect', async function (data) {
     console.log("disconnect "+socket)
-	});
-});
-
+  });
+});*/
+io.on('connection', cbSocket);
 httpServer.listen(port, () => {
   console.log('listening to port', port);
 });

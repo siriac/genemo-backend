@@ -17,6 +17,7 @@ export const toUpperCaseStationName1=(req, res, next)=>{
   }
 }
 export const toUpperCaseStationName=(req, res, next)=>{
+  console.log(req.body)
   const {site:stationName, idClient:regionName}=req.body;
   if(stationName && regionName){
     req.body.stationName=stationName.toUpperCase();

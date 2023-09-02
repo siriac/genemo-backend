@@ -6,7 +6,8 @@ import {
     getRoleByIdResponseDTO,
     getRoleResponseDTO,
     getUpdateRoleResponseDTO,
-    getRoleDTO
+    getRoleDTO,
+    getDeleteRolesResponseDTO
 } from '../../dto/role.dto';
 import {authJwt} from '../../middlewares';
 import { NotFoundError } from '../../lib/errors';
@@ -35,9 +36,9 @@ router.get('/',[authJwt.verifyToken],authJwt.autorize(["admin"]),async (req, res
 });
 router.get('/roleToAssign',[authJwt.verifyToken],authJwt.autorize(["admin"]), async (req, res, next)=>{    
     try {
-        const { page = 1, limit = 10 } = req.query;
+        const { page = 1, limit = 10,idUser } = req.query;
         //verifie si l'utilisateur existe déjà dans MongoDB en fonction de son ID
-        const user=await User.findById(req.userId);
+        const user=await User.findById(idUser);
         if(!user){
             throw new NotFoundError("id user Not Found");
         }
@@ -54,4 +55,14 @@ router.get('/roleToAssign',[authJwt.verifyToken],authJwt.autorize(["admin"]), as
         next(error);
     }
 });
+router.post('/delete',[authJwt.verifyToken],authJwt.autorize("admin"),async (req, res, next) => {
+    try {
+      const {rolesToDelete}=req.body;
+      const rolesDeleted=await Role.deleteMany({_id: { $in: rolesToDelete}});
+      res.json(getDeleteRolesResponseDTO(rolesDeleted));
+      
+    } catch (error) {
+      next(error)
+    }
+      })
 export default router;

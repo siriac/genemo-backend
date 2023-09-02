@@ -10,8 +10,9 @@ const router = Router();
  */
 //cette route sera protegée et accessible seulement par l'utilisateur
 router.post('/signup', [
+  authJwt.verifyToken,
     verifySignUp.checkDuplicateUsernameOrEmail,
     verifySignUp.checkRolesExisted
-  ],controller.signup);
+  ],authJwt.autorize(["admin"]),controller.signup);
 router.post('/signin',controller.signin)
 export default router;

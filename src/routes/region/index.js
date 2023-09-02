@@ -6,9 +6,33 @@ import {
     getRegionResponseDTO,
     getUpdateRegionResponseDTO,
 } from '../../dto/region.dto';
+import {
+  getCreateModuleResponseDTO,
+  getDeleteModuleResponseDTO,
+  getModuleByIdResponseDTO,
+  getModuleResponseDTO,
+  getModuleDTO,
+  getUpdateModuleResponseDTO,
+} from "../../dto/module.dto";
+import {
+  getCreateVidangeResponseDTO,
+  getDeleteVidangeResponseDTO,
+  getVidangeByIdResponseDTO,
+  getVidangeResponseDTO,
+  getUpdateVidangeResponseDTO,
+  getVidangeDTO
+} from "../../dto/vidange.dto";
+import {
+  getCreateTrameResponseDTO,
+  getDeleteTrameResponseDTO,
+getTrameByIdResponseDTO,
+getTrameResponseDTO,
+getTrameDTO,
+getUpdateTrameResponseDTO,
+} from '../../dto/trame.dto';
 import { NotFoundError } from '../../lib/errors';
 import { validateObjectId } from '../../middlewares/validations';
-import { Region, Module } from '../../models';
+import { Region, Module,User,Vidange,Trame } from '../../models';
 import keycloak from '../../index';
 import {authJwt} from '../../middlewares';
 const router = Router();
@@ -71,6 +95,7 @@ router.get('/:regionName/modules',[authJwt.verifyToken,authJwt.autorizeTown],aut
 router.get('/regionToAssign',[authJwt.verifyToken],authJwt.autorize(["admin"]), async (req, res, next)=>{    
     try {
         const { page = 1, limit = 10, idUser} = req.query;
+        console.log(req.query)
         //verifie si l'utilisateur existe déjà dans MongoDB en fonction de son ID
         const user=await User.findById(idUser);
         if(!user){
@@ -83,7 +108,7 @@ router.get('/regionToAssign',[authJwt.verifyToken],authJwt.autorize(["admin"]), 
                 .limit(limit),
                 Region.find({_id:{$nin: user.idTownAuthorise}}).count(),
             ]);
-            res.json(getRoleResponseDTO(regions, page, limit, count))
+            res.json(getRegionResponseDTO(regions, page, limit, count))
         }
     } catch (error) {
         next(error);

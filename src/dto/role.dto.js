@@ -29,3 +29,6 @@ export const getUpdateRoleResponseDTO = (role) => ({
   id: role._id,
   name: role.name
 });
+export const getDeleteRolesResponseDTO = (roles) => ({
+  message: 'Success delete roles',
+});

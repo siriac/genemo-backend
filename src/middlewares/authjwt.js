@@ -7,7 +7,6 @@ const verifyToken = (req, res, next) => {
   if (!token) {
     return res.status(401).send({ message: "No token provided!" });
   }
-
   jwt.verify(token,
             config.secret,
             (err, decoded) => {
@@ -53,7 +52,8 @@ const isAdmin = (req, res, next) => {
 };
 
 const autorizeTown = (req, res, next) => {
-  const {regionName}=req.query;
+  let regionName=req.query.regionName || req.params.regionName;
+  console.log(regionName)
   User.findById(req.userId).exec((err, user) => {
     if (err) {
       res.status(500).send({ message: err });
@@ -160,6 +160,9 @@ const isModerator = (req, res, next)=>{
       }
     );
   });
+}
+const isOwner=(req, res, next)=>{
+
 }
 const authJwt = {
   verifyToken,

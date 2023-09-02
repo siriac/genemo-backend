@@ -27,7 +27,9 @@ export const getDeleteUserResponseDTO = (user) => ({
   message: 'Success delete user',
   id: user._id,
 });
-
+export const getDeleteUsersResponseDTO = (users) => ({
+  message: 'Success delete users',
+});
 export const getUpdateUserResponseDTO = (user) => ({
   message: 'Success update user',
   id: user._id,

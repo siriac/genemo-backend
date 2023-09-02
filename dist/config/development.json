@@ -1,0 +1,14 @@
+{
+    "port":4010,
+    "port2":4000,
+    "mongodb": "mongodb://localhost:27017/genemo",
+    "mongodb2": "mongodb+srv://ulrichnwembe:12azerty@genemomegatec.ukkp2ew.mongodb.net/?retryWrites=true&w=majority",
+    "status":{
+        "NOT_RUNNING":"NOT_RUNNING",
+        "NOT_RUN_FAULT":"NOT_RUNNING/FAULT",
+        "STOPPED":"STOPPED",
+        "RUNNING":"RUNNING",
+        "RUN_FAULT":"RUNNING/FAULT",
+        "NOT_RUNNING_VID":"NOT_RUNNING/VIDANGE"
+    }
+    }

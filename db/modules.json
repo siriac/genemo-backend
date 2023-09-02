@@ -1,32 +1,348 @@
 [{
   "_id": {
-    "$oid": "641fd1e92c12f24872da914c"
+    "$oid": "645a38c1dd98a2d5bf7cefa4"
   },
-  "idImei": {
-    "$oid": "641fbcd70f1c70cf04686708"
+  "dataRequired": {
+    "temp": 0,
+    "fuel": 0,
+    "ph1": 0,
+    "ph2": 0,
+    "ph3": 0,
+    "oilPress": 0,
+    "freq": 0
+  },
+  "temp": 71,
+  "fuel": 71,
+  "bat": 150,
+  "ph1": 237,
+  "ph2": 221,
+  "ph3": 222,
+  "freq": 71,
+  "oilPress": 71,
+  "elapse_total": {
+    "milliseconds": 0,
+    "seconds": 10,
+    "minutes": 40,
+    "hours": 3,
+    "days": 2,
+    "months": 0,
+    "years": 0
+  },
+  "stationName": "MEGATEC",
+  "elapse_total_number": 0,
+  "elapse": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "createdAt": {
+    "$date": "2023-05-09T12:12:49.074Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-19T21:16:04.216Z"
+  },
+  "__v": 0,
+  "status": "RUNNING/FAULT",
+  "idRegion": {
+    "$oid": "64cfe25ab48caa80702aa817"
+  }
+},{
+  "_id": {
+    "$oid": "645f3048b4dc4bf2fa696b5b"
+  },
+  "dataRequired": {
+    "temp": 0,
+    "fuel": 0,
+    "ph1": 0,
+    "ph2": 0,
+    "ph3": 0,
+    "oilPress": 0,
+    "freq": 0
+  },
+  "temp": 0,
+  "fuel": 0,
+  "bat": 0,
+  "ph1": 0,
+  "ph2": 0,
+  "ph3": 0,
+  "freq": 0,
+  "oilPress": 0,
+  "elapse_total": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "stationName": "SANTA LUCIA NKOABANG",
+  "elapse_total_number": 0,
+  "elapse": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "createdAt": {
+    "$date": "2023-05-13T06:38:00.031Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-13T06:38:00.031Z"
+  },
+  "__v": 0,
+  "status": "STOPPED",
+  "idRegion": {
+    "$oid": "64cfe25ab48caa80702aa817"
+  }
+},{
+  "_id": {
+    "$oid": "645f30a1b4dc4bf2fa696b60"
+  },
+  "dataRequired": {
+    "temp": 0,
+    "fuel": 0,
+    "ph1": 0,
+    "ph2": 0,
+    "ph3": 0,
+    "oilPress": 0,
+    "freq": 0
+  },
+  "temp": 35,
+  "fuel": 20,
+  "bat": 200,
+  "ph1": 220,
+  "ph2": 240,
+  "ph3": 255,
+  "freq": 70,
+  "oilPress": 123,
+  "elapse_total": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "stationName": "PHARMACIE DU SOLEIL",
+  "elapse_total_number": 0,
+  "elapse": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "createdAt": {
+    "$date": "2023-05-13T06:39:29.618Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-13T06:39:29.618Z"
+  },
+  "__v": 0,
+  "status": "NOT_RUNNING",
+  "idRegion": {
+    "$oid": "64cfe25ab48caa80702aa817"
+  }
+},{
+  "_id": {
+    "$oid": "645f30d0b4dc4bf2fa696b65"
+  },
+  "dataRequired": {
+    "temp": 0,
+    "fuel": 0,
+    "ph1": 0,
+    "ph2": 0,
+    "ph3": 0,
+    "oilPress": 0,
+    "freq": 0
+  },
+  "temp": 36,
+  "fuel": 60,
+  "bat": 299,
+  "ph1": 254,
+  "ph2": 240,
+  "ph3": 230,
+  "freq": 74,
+  "oilPress": 260,
+  "elapse_total": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "stationName": "ETOUG EBE",
+  "elapse_total_number": 0,
+  "elapse": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "createdAt": {
+    "$date": "2023-05-13T06:40:16.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-13T06:40:16.401Z"
+  },
+  "__v": 0,
+  "status": "RUNNING/FAULT",
+  "idRegion": {
+    "$oid": "64cfe25ab48caa80702aa817"
+  }
+},{
+  "_id": {
+    "$oid": "645f3103b4dc4bf2fa696b6a"
+  },
+  "dataRequired": {
+    "temp": 0,
+    "fuel": 0,
+    "ph1": 0,
+    "ph2": 0,
+    "ph3": 0,
+    "oilPress": 0,
+    "freq": 0
+  },
+  "temp": 65,
+  "fuel": 25,
+  "bat": 120,
+  "ph1": 220,
+  "ph2": 223,
+  "ph3": 190,
+  "freq": 70,
+  "oilPress": 80,
+  "elapse_total": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "stationName": "MBALMAYO",
+  "elapse_total_number": 0,
+  "elapse": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "createdAt": {
+    "$date": "2023-05-13T06:41:07.840Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-13T06:41:07.840Z"
+  },
+  "__v": 0,
+  "status": "RUNNING",
+  "idRegion": {
+    "$oid": "64e0a49685f083e318b75a5e"
+  }
+},{
+  "_id": {
+    "$oid": "645f3127b4dc4bf2fa696b6f"
+  },
+  "dataRequired": {
+    "temp": 0,
+    "fuel": 0,
+    "ph1": 0,
+    "ph2": 0,
+    "ph3": 0,
+    "oilPress": 0,
+    "freq": 0
+  },
+  "temp": 40,
+  "fuel": 120,
+  "bat": 220,
+  "ph1": 220,
+  "ph2": 223,
+  "ph3": 225,
+  "freq": 69,
+  "oilPress": 40,
+  "elapse_total": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "stationName": "BERTOUA",
+  "elapse_total_number": 0,
+  "elapse": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "createdAt": {
+    "$date": "2023-05-13T06:41:43.621Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-13T06:41:43.621Z"
+  },
+  "__v": 0,
+  "status": "RUNNING",
+  "idRegion": {
+    "$oid": "64cfe276b48caa80702aa819"
+  }
+},{
+  "_id": {
+    "$oid": "645f9c59b4dc4bf2fa696f10"
+  },
+  "dataRequired": {
+    "temp": 0,
+    "fuel": 0,
+    "ph1": 0,
+    "ph2": 0,
+    "ph3": 0,
+    "oilPress": 0,
+    "freq": 0
+  },
+  "temp": 70,
+  "fuel": 80,
+  "bat": 50,
+  "ph1": 220,
+  "ph2": 225,
+  "ph3": 228,
+  "freq": 70,
+  "oilPress": 80,
+  "elapse_total": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
   },
   "stationName": "MOKOLO",
-  "position": {
-    "lat": 1.1,
-    "long": 0.8
-  },
-  "createdAt": {
-    "$date": "2023-03-26T05:02:33.171Z"
-  },
-  "updatedAt": {
-    "$date": "2023-04-26T21:10:08.249Z"
-  },
-  "dataRequired": {
-    "temperature": 0,
-    "fuel": 0,
-    "phase1": 0,
-    "phase2": 0,
-    "pression_huile": 0,
-    "frequence": 0
-  },
-  "__v": 0,
-  "etat": false,
-  "duree_fonctionnement_format": {
+  "elapse_total_number": 0,
+  "elapse": {
     "milliseconds": 0,
     "seconds": 0,
     "minutes": 0,
@@ -35,36 +351,39 @@
     "months": 0,
     "years": 0
   },
-  "duree_fonctionnement": 45900000
+  "createdAt": {
+    "$date": "2023-05-13T14:19:05.754Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-13T14:19:05.754Z"
+  },
+  "__v": 0,
+  "status": "RUNNING",
+  "idRegion": {
+    "$oid": "64cfe25ab48caa80702aa817"
+  }
 },{
   "_id": {
-    "$oid": "644d62c3cecc128a1057b546"
-  },
-  "idImei": {
-    "$oid": "641fbcd70f1c70cf04686708"
-  },
-  "stationName": "TSINGA",
-  "position": {
-    "lat": 1.1,
-    "long": 0.8
-  },
-  "createdAt": {
-    "$date": "2023-03-26T05:02:33.171Z"
-  },
-  "updatedAt": {
-    "$date": "2023-04-26T21:10:08.249Z"
+    "$oid": "645f9f34b4dc4bf2fa696f3a"
   },
   "dataRequired": {
-    "temperature": 0,
+    "temp": 0,
     "fuel": 0,
-    "phase1": 0,
-    "phase2": 0,
-    "pression_huile": 0,
-    "frequence": 0
+    "ph1": 0,
+    "ph2": 0,
+    "ph3": 0,
+    "oilPress": 0,
+    "freq": 0
   },
-  "__v": 0,
-  "etat": false,
-  "duree_fonctionnement_format": {
+  "temp": 37,
+  "fuel": 90.5,
+  "bat": 55.7,
+  "ph1": 220,
+  "ph2": 280,
+  "ph3": 279,
+  "freq": 65,
+  "oilPress": 45,
+  "elapse_total": {
     "milliseconds": 0,
     "seconds": 0,
     "minutes": 0,
@@ -73,36 +392,53 @@
     "months": 0,
     "years": 0
   },
-  "duree_fonctionnement": 45900000
+  "stationName": "ELIG EDZOA",
+  "elapse_total_number": 0,
+  "elapse": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "createdAt": {
+    "$date": "2023-05-13T14:31:16.763Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-13T14:31:16.763Z"
+  },
+  "__v": 0,
+  "status": "RUNNING/FAULT",
+  "idRegion": {
+    "$oid": "64cfe25ab48caa80702aa817"
+  }
 },{
   "_id": {
-    "$oid": "644d62dccecc128a1057b547"
+    "$oid": "64c4dfb7f86af775b8c4e15e"
   },
-  "idImei": {
-    "$oid": "641fbcd70f1c70cf04686708"
-  },
-  "stationName": "MARCHE CENTRAL",
-  "position": {
-    "lat": 1.1,
-    "long": 0.8
-  },
-  "createdAt": {
-    "$date": "2023-03-26T05:02:33.171Z"
-  },
-  "updatedAt": {
-    "$date": "2023-04-26T21:10:08.249Z"
+  "idRegion": {
+    "$oid": "64cfe25ab48caa80702aa817"
   },
   "dataRequired": {
-    "temperature": 0,
+    "temp": 0,
     "fuel": 0,
-    "phase1": 0,
-    "phase2": 0,
-    "pression_huile": 0,
-    "frequence": 0
+    "ph1": 0,
+    "ph2": 0,
+    "ph3": 0,
+    "oilPress": 0,
+    "freq": 0
   },
-  "__v": 0,
-  "etat": false,
-  "duree_fonctionnement_format": {
+  "temp": 30,
+  "fuel": 45,
+  "bat": 23,
+  "ph1": 210,
+  "ph2": 208,
+  "ph3": 205,
+  "freq": 65,
+  "oilPress": 12,
+  "elapse_total": {
     "milliseconds": 0,
     "seconds": 0,
     "minutes": 0,
@@ -111,5 +447,23 @@
     "months": 0,
     "years": 0
   },
-  "duree_fonctionnement": 45900000
+  "stationName": "OBILI",
+  "elapse_total_number": 0,
+  "elapse": {
+    "milliseconds": 0,
+    "seconds": 0,
+    "minutes": 0,
+    "hours": 0,
+    "days": 0,
+    "months": 0,
+    "years": 0
+  },
+  "status": "RUNNING",
+  "createdAt": {
+    "$date": "2023-07-29T09:45:27.810Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-29T09:45:27.810Z"
+  },
+  "__v": 0
 }]

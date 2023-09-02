@@ -73,8 +73,8 @@ exports.signin = (req, res) => {
   User.findOne({
     username: req.body.username
   })
-    .populate("roles", "-__v")
-    .populate("idTownAuthorise", "-__v")
+  .populate({path:"roles",select:['_id','name']})
+  .populate({path:"idTownAuthorise",select:['_id','name']})
     .exec((err, user) => {
       if (err) {
         res.status(500).send({ message: err });

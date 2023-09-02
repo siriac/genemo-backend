@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "64cdf353cb8bd1f86a9dfe0b"
+  },
+  "username": "admin",
+  "password": "$2a$08$Gm0ygDZr5YrByWNA9zwOcOD0c9KVUKjVdootX5mcY03ZkKoiRmnvO",
+  "email": "admin@genemo.com",
+  "roles": [
+    {
+      "$oid": "64cdec8fd3eb695cc681e168"
+    },
+    {
+      "$oid": "64cdefd843b07d849bbf6a1d"
+    }
+  ],
+  "idTownAuthorise": [
+    {
+      "$oid": "64c4df7bf86af775b8c4e157"
+    },
+    {
+      "$oid": "64cfe25ab48caa80702aa817"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-05T06:59:31.364Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-12T14:50:39.802Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64cdf36562e3d79f5c4b7801"
+  },
+  "username": "user1",
+  "password": "$2a$08$CUXUTSjIjZr36lhj4zQSnu9AoTo9WnIPhufgJKgjQywSwH27mYnoS",
+  "email": "user1@gmail.com",
+  "roles": [
+    {
+      "$oid": "64cdec8fd3eb695cc681e167"
+    }
+  ],
+  "idTownAuthorise": [
+    {
+      "$oid": "64c4df7bf86af775b8c4e157"
+    },
+    {
+      "$oid": "64cfe25ab48caa80702aa817"
+    },
+    {
+      "$oid": "64cfe276b48caa80702aa819"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-05T06:59:49.158Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-06T19:06:25.039Z"
+  },
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "64d8742d75d3ee5214f3824b"
+  },
+  "username": "user2",
+  "password": "$2a$08$sBYc5MojGbPMklCuOlBhqOjxAE5Y5MIq3VE7dtLKcmR1TQ5rwvaqm",
+  "email": "user2@gmail.com",
+  "roles": [
+    {
+      "$oid": "64cdec8fd3eb695cc681e167"
+    }
+  ],
+  "idTownAuthorise": [],
+  "createdAt": {
+    "$date": "2023-08-13T06:11:57.809Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-13T06:11:57.850Z"
+  },
+  "__v": 1
+}]

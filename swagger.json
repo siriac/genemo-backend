@@ -13,7 +13,8 @@
     }
   },
   "schemes": ["http","https"],
-  "host": "localhost:4000",
+  "host": "139.59.208.55:4000",
+  "host1": "localhost:4000",
   "basePath": "/",
   "securityDefinitions":{
     "bearerAuth":{
@@ -96,7 +97,7 @@
         }
       }
     },
-    "/modules/{idModule}": {
+    "/modules/{id}": {
         "get": {
           "security":[{
             "bearerAuth":[]
@@ -106,7 +107,7 @@
           "consumes": ["application/json"],
           "parameters": [
               {
-                  "name": "idModule",
+                  "name": "id",
                   "in": "path",
                   "description": "Id module that needs to get informations",
                   "required": true,
@@ -191,14 +192,17 @@
           }
         }
       },
-      "/modules/{idModule}/trames": {
+      "/modules/{id}/trames": {
         "get": {
+          "security":[{
+            "bearerAuth":[]
+          }],
           "summary": "Obtenir toutes les trames d'un module",
           "description": "Obtenir toutes les trames d'un module",
           "consumes": ["application/json"],
           "parameters": [
               {
-                  "name": "idModule",
+                  "name": "id",
                   "in": "path",
                   "description": "id module or generator that needs to get all trames",
                   "required": true,
@@ -675,12 +679,473 @@
         }
       }
     },
+    "/users/{idUser}": {
+      "get": {
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "summary": "Obtenir les informations sur un utilisateur",
+        "description": "Obtenir les informations sur un utilisateur",
+        "consumes": ["application/json"],
+        "parameters": [
+            {
+                "name": "idUser",
+                "in": "path",
+                "description": "id de l'utilisateur qu'on veut avoir l'information",
+                "required": true,
+                "type": "string"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref":"#/definitions/userUpdated"
+            }   
+          },
+          "500": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/users/{idUser}/details":{
+      "patch": {
+        "summary": "Mettre à jour les details de l'utilisateur (username, email)",
+        "description": "Mettre à jour les details de l'utilisateur (username, email)",
+        "produces": ["application/json"],
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "parameters": [
+          {
+            "name": "idUser",
+            "in": "path",
+            "description": "identifiant de l'utilisateur qui doit etre mise à jour",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "object user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "details": {
+                  "type": "object",
+                  "$ref": "#/definitions/Details"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref":"#/definitions/userUpdated"
+            }
+          },
+          "404": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/users/{idUser}/credentials":{
+      "patch": {
+        "summary": "Mettre à jour les credentials (changer son mot de password) de l'un utilisateur",
+        "description": "Mettre à jour les credentials (changer son mot de password) de l'un utilisateur",
+        "produces": ["application/json"],
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "parameters": [
+          {
+            "name": "idUser",
+            "in": "path",
+            "description": "identifiant de l'utilisateur qui doit etre mise à jour",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "object user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "credentials": {
+                  "type": "object",
+                  "$ref": "#/definitions/Credentials"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref":"#/definitions/userUpdated"
+            }
+          },
+          "404": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/users/{idUser}/assignRole":{
+      "patch": {
+        "summary": "Assigner un nouveau role à un utilisateur",
+        "description": "Assigner un nouveau role à un utilisateur",
+        "produces": ["application/json"],
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "parameters": [
+          {
+            "name": "idUser",
+            "in": "path",
+            "description": "identifiant de l'utilisateur qui doit etre mise à jour",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "object user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "assignRole": {
+                  "type": "object",
+                  "$ref": "#/definitions/AssignRole"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref":"#/definitions/userUpdated"
+            }
+          },
+          "404": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/users/{idUser}/unassignRole":{
+      "patch": {
+        "summary": "Retirer un ou plusieurs role à un utilisateur",
+        "description": "Retirer un ou plusieurs role à un utilisateur",
+        "produces": ["application/json"],
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "parameters": [
+          {
+            "name": "idUser",
+            "in": "path",
+            "description": "identifiant de l'utilisateur qui doit etre mise à jour",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "object user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "unassignRole": {
+                  "type": "object",
+                  "$ref": "#/definitions/UnassignRole"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref":"#/definitions/userUpdated"
+            }
+          },
+          "404": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/users/{idUser}/assignTown":{
+      "patch": {
+        "summary": "Assigner une nouvelle region à un utilisateur",
+        "description": "Assigner une nouvelle region à un utilisateur",
+        "produces": ["application/json"],
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "parameters": [
+          {
+            "name": "idUser",
+            "in": "path",
+            "description": "identifiant de l'utilisateur qui doit etre mise à jour",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "object user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "assignTown": {
+                  "type": "object",
+                  "$ref": "#/definitions/AssignTown"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref":"#/definitions/userUpdated"
+            }
+          },
+          "404": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/users/{idUser}/unassignTown":{
+      "patch": {
+        "summary": "Retirer une ou plusieurs ville à un utilisateur",
+        "description": "Retirer une ou plusieurs ville à un utilisateur",
+        "produces": ["application/json"],
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "parameters": [
+          {
+            "name": "idUser",
+            "in": "path",
+            "description": "identifiant de l'utilisateur qui doit etre mise à jour",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "object user",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "unassignTown": {
+                  "type": "object",
+                  "$ref": "#/definitions/UnassignTown"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref":"#/definitions/userUpdated"
+            }
+          },
+          "404": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/users/delete": {
+      "post": {
+        "summary": "Delete array idUser",
+        "description": "Delete users list",
+        "produces": ["application/json"],
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "object list users to delete",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "usersToDelete": {
+                  "type": "array",
+                  "items":{
+                    "type":"String"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/userDeleted"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    },
     "/auth/signup":{
       "post": {
         "summary": "Creation d'un nouveau utilisateur",
         "description": "Crée un nouveau utilisateur dans le systeme",
         "produces": ["application/json"],
         "consumes": ["application/json"],
+        "security":[{
+          "bearerAuth":[]
+        }],
         "parameters": [
           {
             "in": "body",
@@ -718,6 +1183,18 @@
             "description": "Invalid status value",
             "schema": {
               "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
             }
           }
         }
@@ -877,7 +1354,7 @@
         }
       }
     },
-    "/roleToAssign":{
+    "/roles/roleToAssign":{
       "get": {
         "security":[{
           "bearerAuth":[]
@@ -886,6 +1363,13 @@
         "description": "Obtenir tous les roles à assigner à un utilisateur",
         "consumes": ["application/json"],
         "parameters": [
+          {
+            "name": "idUser",
+            "in": "query",
+            "description": "Identifiant de l'utilisateur",
+            "required": false,
+            "type": "String"
+        },
             {
               "name": "page",
               "in": "query",
@@ -932,7 +1416,53 @@
         }
       }
     },
-    "/regionToAssign":{
+    "/roles/delete": {
+      "post": {
+        "summary": "Delete array idRole",
+        "description": "Delete roles list",
+        "produces": ["application/json"],
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "object list roles to delete",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "rolesToDelete": {
+                  "type": "array",
+                  "items":{
+                    "type":"String"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/roleDeleted"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    },
+    "/regions/regionToAssign":{
       "get": {
         "security":[{
           "bearerAuth":[]
@@ -941,6 +1471,13 @@
         "description": "Obtenir tous les regions à assigner à un utilisateur",
         "consumes": ["application/json"],
         "parameters": [
+          {
+            "name": "idUser",
+            "in": "query",
+            "description": "Identifiant de l'utilisateur",
+            "required": false,
+            "type": "String"
+        },
             {
               "name": "page",
               "in": "query",
@@ -963,6 +1500,68 @@
               "type": "array",
               "items": {
                 "$ref": "#/definitions/role"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/UnautorizedError"
+            }
+          },
+          "403": {
+            "description": "Role Unauthorized!",
+            "schema": {
+              "$ref": "#/definitions/PermissionError"
+            }
+          }
+        }
+      }
+    },
+    "/regions/{regionName}/modules":{
+      "get": {
+        "security":[{
+          "bearerAuth":[]
+        }],
+        "summary": "Obtenir tous les modules d'une region",
+        "description": "Obtenir tous les modules d'une region",
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "name": "regionName",
+            "in": "path",
+            "description": "nom de la region",
+            "required": false,
+            "type": "String"
+        },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "Numero de la page",
+              "required": false,
+              "type": "integer"
+          },
+          {
+              "name": "limit",
+              "in": "query",
+              "description": "Nombre d'element à afficher dans la page",
+              "required": false,
+              "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/modulesResponse"
               }
             }
           },
@@ -1615,7 +2214,7 @@
       "AssignTown":{
         "type":"object",
         "properties":{
-          "roles":{
+          "towns":{
             "type":"array",
             "items":{
               "$ref":"#/definitions/idRegion"
@@ -1626,7 +2225,7 @@
       "UnassignTown":{
         "type":"object",
         "properties":{
-          "roles":{
+          "towns":{
             "type":"array",
             "items":{
               "$ref":"#/definitions/idRegion"
@@ -1652,6 +2251,24 @@
           "id":{
             "type":"string",
             "description":"identifiant de l'utilisateur crée"
+          }
+        }
+      },
+      "userDeleted":{
+        "type":"object",
+        "properties":{
+          "message":{
+            "type":"string",
+            "description":"Message de succée de suppression de un ou plusieurs utilisateurs"
+          }
+        }
+      },
+      "roleDeleted":{
+        "type":"object",
+        "properties":{
+          "message":{
+            "type":"string",
+            "description":"Message de succée de suppression de un ou plusieurs roles"
           }
         }
       },

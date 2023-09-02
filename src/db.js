@@ -9,3 +9,4 @@ export const initializeDB = () => {
     logger.info('Connected to MongoDB!!');
   });
 };
+

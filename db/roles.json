@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "64cdec8fd3eb695cc681e168"
+  },
+  "name": "admin",
+  "createdAt": {
+    "$date": "2023-08-05T06:30:39.319Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-05T06:30:39.319Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64cdec8fd3eb695cc681e167"
+  },
+  "name": "user",
+  "createdAt": {
+    "$date": "2023-08-05T06:30:39.318Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-05T06:30:39.318Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64cdefd843b07d849bbf6a1d"
+  },
+  "name": "invité",
+  "createdAt": {
+    "$date": "2023-08-05T06:44:40.928Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-05T06:44:40.928Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64cdefd843b07d849bbf6a1e"
+  },
+  "name": "moderateur",
+  "createdAt": {
+    "$date": "2023-08-05T06:44:40.929Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-05T06:44:40.929Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64cdefed793cd6b2d5115f29"
+  },
+  "name": "super admin",
+  "createdAt": {
+    "$date": "2023-08-05T06:45:01.720Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-05T06:45:01.720Z"
+  },
+  "__v": 0
+}]

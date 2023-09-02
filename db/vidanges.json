@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "64ac4682ec46ebd3a3507665"
+  },
+  "idModule": {
+    "$oid": "645a38c1dd98a2d5bf7cefa4"
+  },
+  "date": {
+    "$date": "2023-07-10T17:57:00Z"
+  },
+  "doBy": "Inconnu",
+  "createdAt": {
+    "$date": "2023-07-10T17:57:22.916Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-10T17:57:22.916Z"
+  },
+  "__v": 0
+}]

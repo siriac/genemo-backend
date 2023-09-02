@@ -1,6 +1,7 @@
 import { Router } from "express";
 import config from 'config';
 import moment from 'moment';
+import {getOneSocket} from '../../service/socket.service';
 import {
   getCreateModuleResponseDTO,
   getDeleteModuleResponseDTO,
@@ -47,14 +48,9 @@ import {
 } from '../../dto/region.dto';
 import { NotFoundError } from "../../lib/errors";
 import { validateObjectId } from "../../middlewares/validations";
-import { Module } from "../../models/module";
-import { Data } from "../../models/data";
-import {Trame} from "../../models/trame";
+import { Module,User, Data,Trame,Vidange,Region,Activities} from "../../models";
 import {StandBy} from "../../models/standBy";
-import  {Vidange} from "../../models/vidange";
-import {Region} from "../../models/region";
 import {Running} from "../../models/running";
-import { Activities } from "../../models/activities";
 import {toUpperCaseStationName} from "../../lib/util";
 import {authJwt} from '../../middlewares';
 import {getLocalTime,getDurationHoursAndMinutes} from "../../lib/dateTime";
@@ -70,9 +66,7 @@ router.post("/", toUpperCaseStationName,async (req, res, next)=>{
   try {
     const {body={}}=req;
     const dataSocket={};
-    console.log(req.body);
     const{stationName}=req.body;
-    console.log(stationName);
     const {temp,fuel,bat,ph1,ph2, ph3,freq,oilPress,status,date,elapsed,position={},regionName}=body;
     if(elapsed){
       elapsed.milliseconds=0;
@@ -82,9 +76,6 @@ router.post("/", toUpperCaseStationName,async (req, res, next)=>{
     let d1,trame={};
     let vidange={};
     let module=await Module.findOne({stationName }).exec();
-    console.log(stationName)
-    console.log(module);
-    console.log("module");
     /**
      * On verifie si la region existe
      */
@@ -149,12 +140,26 @@ router.post("/", toUpperCaseStationName,async (req, res, next)=>{
     trame=await Trame.create({...body,idModule:module._id});
     console.log(trame)
     }
-
-    global.io.emit("incomingTrame",{
+//find user by idRegion
+const users=await User.find({regions:{$in:module.idRegion}});
+console.log(users);
+for(let i=0;i<users.length;i++){
+  let idSocket =getOneSocket({idUser:users[i]._id.toString()})
+  console.log(idSocket);
+  if(idSocket){
+    console.log(global.io.sockets);
+    global.io.sockets.sockets.get(idSocket).emit('incomingTrame', {
       module:getModuleDTO(module),
       trame:getTrameDTO(trame),
      vidange:Object.keys(vidange).length===0?vidange: getVidangeDTO(vidange),
     });
+  }
+}
+    /*global.io.emit("incomingTrame",{
+      module:getModuleDTO(module),
+      trame:getTrameDTO(trame),
+     vidange:Object.keys(vidange).length===0?vidange: getVidangeDTO(vidange),
+    });*/
     res.status(200).json({
       status:"Ok",
       idModule:module._id.toString(),
@@ -312,7 +317,8 @@ router.get("/", [authJwt.verifyToken], authJwt.autorize(["admin"]), async (req, 
       Module.find({ stationName:{$regex: name,$options: 'i'}})
         .skip((page - 1) * limit)
         .limit(limit)
-        .sort({ createdAt: -1 }),
+        .sort({ createdAt: -1 })
+        .populate({path:"idRegion",select:['_id','name']}),
       Module.count({ stationName:{$regex: name,$options: 'i'}}),
     ]);
     const {data,pagination}=getModuleResponseDTO(mods, page, limit, count);
@@ -335,7 +341,7 @@ router.get("/", [authJwt.verifyToken], authJwt.autorize(["admin"]), async (req, 
     next(error);
   }
 });
-router.get("/:id",[authJwt.verifyToken,validateObjectId,authJwt.autorizeTown],authJwt.autorize(["admin","user"]),async (req, res, next) => {
+router.get("/:id",[authJwt.verifyToken,validateObjectId],authJwt.autorize(["admin","user"]),async (req, res, next) => {
   try {
     const id = req.params.id;
     const module = await Module.findOne({ _id: id });
@@ -459,10 +465,10 @@ router.patch("/:id", validateObjectId, async (req, res, next) => {
     next(error);
   }
 });
-router.get("/:idModule/trames", async (req, res, next) => {
+router.get("/:id/trames", [authJwt.verifyToken,validateObjectId],authJwt.autorize(["admin","user"]),async (req, res, next) => {
   try {
     const { params = {} } = req;
-    const { idModule } = params;
+    const { id } = params;
     const { page = 1, limit = 10, from, at} = req.query;
     const query = {};
     if (from && at) {
@@ -479,7 +485,7 @@ router.get("/:idModule/trames", async (req, res, next) => {
         }
       }
     }
-    query.idModule = idModule;
+    query.idModule = id;
     /*console.log(query);
     var date2 = moment("2014-01-16");
     console.log(date2);*/
@@ -492,7 +498,7 @@ router.get("/:idModule/trames", async (req, res, next) => {
 })
    */
     //je recherche d'abord sur le module existe
-    const module = await Module.findById(idModule);
+    const module = await Module.findById(id);
     if (!module) {
       throw new NotFoundError("id module introuvable");
     }
